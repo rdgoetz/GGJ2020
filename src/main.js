@@ -3,7 +3,7 @@
  * Asset Credits:
  *  - Tuxemon, https://github.com/Tuxemon/Tuxemon
  */
-
+import UIManager from './ui/uiManager.js';
 document.addEventListener("DOMContentLoaded", function(event) {
 
 const config = {
@@ -25,7 +25,7 @@ const config = {
     preload: preload,
     create: create,
     update: update
-  }
+  },
 };
 
 const game = new Phaser.Game(config);
@@ -43,10 +43,12 @@ let world = new World({
   skeletonSpawn: SkeletonSpawn
 });
 
+var UI = new UIManager();
 let showDebug = false;
 
 function preload() {
-  world.loadAssets(this)
+  world.loadAssets(this);
+  this.load.html('status', UI.uiPanels.statusBar)
 }
 
 function create() {
@@ -70,6 +72,12 @@ function create() {
       faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
     });
   });
+
+  // UI ----------------------------------------------
+  
+  this.add.dom(400, 550).createFromCache('status')
+    .setScrollFactor(0);
+  // END UI -------------------------------------
 }
 
 function update(time, delta) {

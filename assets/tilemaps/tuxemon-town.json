@@ -66,20 +66,80 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":733.673330252265,
-                 "y":757.195186219887
+                 "x":733.673,
+                 "y":757.195
                 }, 
                 {
                  "height":0,
-                 "id":277,
-                 "name":"spawn:skeleton",
+                 "id":278,
+                 "name":"Skeleton Spawn",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"spawns",
+                         "type":"string",
+                         "value":"skeleton"
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"spawner",
                  "visible":true,
                  "width":0,
-                 "x":562.445717393991,
-                 "y":380.113951639853
+                 "x":503.935008885504,
+                 "y":573.749682660574
+                }, 
+                {
+                 "height":0,
+                 "id":279,
+                 "name":"Player Spawn",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"spawns",
+                         "type":"string",
+                         "value":"player"
+                        }],
+                 "rotation":0,
+                 "type":"spawner",
+                 "visible":true,
+                 "width":0,
+                 "x":586.443259710586,
+                 "y":741.304899720741
+                }, 
+                {
+                 "height":0,
+                 "id":280,
+                 "name":"Skeleton Spawn",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"spawns",
+                         "type":"string",
+                         "value":"skeleton"
+                        }],
+                 "rotation":0,
+                 "type":"spawner",
+                 "visible":true,
+                 "width":0,
+                 "x":567.402894135567,
+                 "y":356.689515105357
+                }, 
+                {
+                 "height":0,
+                 "id":281,
+                 "name":"Skeleton Spawn",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"spawns",
+                         "type":"string",
+                         "value":"skeleton"
+                        }],
+                 "rotation":0,
+                 "type":"spawner",
+                 "visible":true,
+                 "width":0,
+                 "x":613.099771515613,
+                 "y":464.584920030465
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -88,7 +148,7 @@
          "y":0
         }],
  "nextlayerid":5,
- "nextobjectid":278,
+ "nextobjectid":282,
  "orientation":"orthogonal",
  "properties":[
         {

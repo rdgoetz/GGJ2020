@@ -1,6 +1,5 @@
-import statusBar from './statusBar'
-
-const state = {
-  statusBar: true,
+export default class uiManager{
+  state = {
+    statusBar: true,
+  }
 }
-

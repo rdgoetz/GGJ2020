@@ -1,0 +1,503 @@
+{
+	"textures": [
+		{
+			"image": "full_atlas.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 250,
+				"h": 161
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "atlas.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 196,
+						"h": 86
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 194,
+						"h": 85
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 194,
+						"h": 85
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-front-walk.000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 10,
+						"w": 16,
+						"h": 22
+					},
+					"frame": {
+						"x": 197,
+						"y": 1,
+						"w": 16,
+						"h": 22
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-front-walk.001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 10,
+						"w": 16,
+						"h": 22
+					},
+					"frame": {
+						"x": 215,
+						"y": 1,
+						"w": 16,
+						"h": 22
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-front-walk.002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 10,
+						"w": 16,
+						"h": 22
+					},
+					"frame": {
+						"x": 233,
+						"y": 1,
+						"w": 16,
+						"h": 22
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-front-walk.003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 10,
+						"w": 16,
+						"h": 22
+					},
+					"frame": {
+						"x": 197,
+						"y": 25,
+						"w": 16,
+						"h": 22
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-front.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 10,
+						"w": 16,
+						"h": 22
+					},
+					"frame": {
+						"x": 215,
+						"y": 25,
+						"w": 16,
+						"h": 22
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-back-walk.000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 11,
+						"w": 16,
+						"h": 21
+					},
+					"frame": {
+						"x": 233,
+						"y": 25,
+						"w": 16,
+						"h": 21
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-back-walk.001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 11,
+						"w": 16,
+						"h": 21
+					},
+					"frame": {
+						"x": 233,
+						"y": 48,
+						"w": 16,
+						"h": 21
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-back-walk.002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 11,
+						"w": 16,
+						"h": 21
+					},
+					"frame": {
+						"x": 197,
+						"y": 49,
+						"w": 16,
+						"h": 21
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-back-walk.003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 11,
+						"w": 16,
+						"h": 21
+					},
+					"frame": {
+						"x": 215,
+						"y": 49,
+						"w": 16,
+						"h": 21
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-back.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 11,
+						"w": 16,
+						"h": 21
+					},
+					"frame": {
+						"x": 233,
+						"y": 71,
+						"w": 16,
+						"h": 21
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-left-walk.001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 11,
+						"w": 16,
+						"h": 21
+					},
+					"frame": {
+						"x": 197,
+						"y": 72,
+						"w": 16,
+						"h": 21
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-left-walk.003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 11,
+						"w": 16,
+						"h": 21
+					},
+					"frame": {
+						"x": 215,
+						"y": 72,
+						"w": 16,
+						"h": 21
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-left.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 11,
+						"w": 16,
+						"h": 21
+					},
+					"frame": {
+						"x": 233,
+						"y": 94,
+						"w": 16,
+						"h": 21
+					}
+				},
+				{
+					"filename": "sword_skeleton/sword_skelton.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 91,
+						"h": 66
+					},
+					"frame": {
+						"x": 1,
+						"y": 88,
+						"w": 91,
+						"h": 66
+					}
+				},
+				{
+					"filename": "sword_skelton.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 91,
+						"h": 66
+					},
+					"frame": {
+						"x": 94,
+						"y": 88,
+						"w": 91,
+						"h": 66
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-right-walk.001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 11,
+						"w": 16,
+						"h": 21
+					},
+					"frame": {
+						"x": 187,
+						"y": 95,
+						"w": 16,
+						"h": 21
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-right-walk.003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 11,
+						"w": 16,
+						"h": 21
+					},
+					"frame": {
+						"x": 205,
+						"y": 95,
+						"w": 16,
+						"h": 21
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-right.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 11,
+						"w": 16,
+						"h": 21
+					},
+					"frame": {
+						"x": 223,
+						"y": 117,
+						"w": 16,
+						"h": 21
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-left-walk.000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 12,
+						"w": 16,
+						"h": 20
+					},
+					"frame": {
+						"x": 187,
+						"y": 118,
+						"w": 16,
+						"h": 20
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-left-walk.002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 12,
+						"w": 16,
+						"h": 20
+					},
+					"frame": {
+						"x": 205,
+						"y": 118,
+						"w": 16,
+						"h": 20
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-right-walk.000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 12,
+						"w": 16,
+						"h": 20
+					},
+					"frame": {
+						"x": 187,
+						"y": 140,
+						"w": 16,
+						"h": 20
+					}
+				},
+				{
+					"filename": "tuxemon-misa/misa-right-walk.002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 12,
+						"w": 16,
+						"h": 20
+					},
+					"frame": {
+						"x": 205,
+						"y": 140,
+						"w": 16,
+						"h": 20
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:b9a6dc17f5344e8772fa1b86f84d0553:7179ba3a2f70f2fb80102f896538a6f6:843549fdf6b65ad14f97a53f6db736b3$"
+	}
+}

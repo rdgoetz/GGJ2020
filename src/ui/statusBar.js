@@ -1,22 +1,33 @@
 
 const data = {
-  life = 12,
-  bones = 0,
-  coins = 0,
-  powerup = '',
-  timeToHero = 120,
-  heroAlert = false,
-  heroAlertTimer = 0 // time for heroAlertMessage coroutine
+  life: 0,
+  bones: 0,
+  coins: 0,
+  powerup: '',
+  timeToHero: 120,
+  heroAlert: false,
+  heroAlertTimer: 0 // time for heroAlertMessage coroutine
 }
 
 // the actual values being displayed
 const display = {
-  enabled = true, // show or hide entire bar
-  life = data.life,
-  bones = data.bones + "x",
-  coins = data.coins + "x",
-  powerup = data.powerup,
-  timeToHero = displayTimer()
+  enabled: true, // show or hide entire bar
+  life: data.life,
+  bones: data.bones + "x",
+  coins: data.coins + "x",
+  powerup: data.powerup,
+  timeToHero: displayTimer()
+}
+
+const render = () => {
+  text(16, 16, 'What a chump', {
+    font: "18px monospace",
+    fill: "#000000",
+    padding: { x: 20, y: 10 },
+    backgroundColor: "#ffffff"
+  })
+  .setScrollFactor(0)
+  .setDepth(30);
 }
 
 // Health

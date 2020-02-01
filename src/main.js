@@ -11,7 +11,10 @@ const config = {
   width: 800,
   height: 600,
   parent: "game-container",
-  pixelArt: true,
+  pixelArt: true, 
+  dom: {
+    createContainer: true
+  },
   physics: {
     default: "arcade",
     arcade: {

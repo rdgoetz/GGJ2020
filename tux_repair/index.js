@@ -30,7 +30,7 @@ let skeleton;
 let showDebug = false;
 
 function preload() {
-  this.load.image("tiles", "../assets/tilesets/dungeon.png");
+  this.load.image("tiles", "../assets/tilesets/32_dungeon_tiles.png");
   this.load.tilemapTiledJSON("map", "../assets/tilemaps/tuxemon-town.json");
 
   // An atlas is a way to pack multiple images together into one texture. I'm using it to load all
@@ -46,7 +46,7 @@ function create() {
 
   // Parameters are the name you gave the tileset in Tiled and then the key of the tileset image in
   // Phaser's cache (i.e. the name you used in preload)
-  const tileset = map.addTilesetImage("Dungeon Base", "tiles");
+  const tileset = map.addTilesetImage("32_dungeon", "tiles");
 
   // Parameters: layer name (or index) from Tiled, tileset, x, y
   const belowLayer = map.createStaticLayer("Below Player", tileset, 0, 0);
@@ -63,7 +63,7 @@ function create() {
   // Object layers in Tiled let you embed extra info into a map - like a spawn point or custom
   // collision shapes. In the tmx file, there's an object layer with a point named "Spawn Point"
   const spawnPoint = map.findObject("Objects", obj => obj.name === "spawn:player");
-  //const skeletonSpawn = map.findObject("Objects", obj => obj.name === "spawn:skeleton");
+  const skeletonSpawn = map.findObject("Objects", obj => obj.name === "spawn:skeleton");
 
   // Create a sprite with physics enabled via the physics system. The image used for the sprite has
   // a bit of whitespace, so I'm using setSize & setOffset to control the size of the player's body.
@@ -72,10 +72,10 @@ function create() {
     .setSize(30, 40)
     .setOffset(0, 24);
 
-/*  skeleton = this.physics.add
-    .sprite(skeletonSpawn.x, skeletonSpawn.y, "atlas", "misa-front")
+  skeleton = this.physics.add
+    .sprite(skeletonSpawn.x, skeletonSpawn.y, "atlas", "sword_skelton-0")
     .setSize(30, 40)
-    .setOffset(0, 24); */
+    .setOffset(0, 24);
 
   // Watch the player and worldLayer for collisions, for the duration of the scene:
   this.physics.add.collider(player, worldLayer);
@@ -86,12 +86,12 @@ function create() {
   // animation manager so any sprite can access them.
   const anims = this.anims;
   anims.create({
-    key: "sword_skelton",
+    key: "misa-left-walk",
     frames: anims.generateFrameNames("atlas", {
-      prefix: "sword_skelton.",
+      prefix: "sword_skelton-",
       start: 0,
       end: 3,
-      zeroPad: 3
+      zeroPad: 1
     }),
     frameRate: 10,
     repeat: -1

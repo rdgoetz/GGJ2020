@@ -4,6 +4,7 @@
  *  - Tuxemon, https://github.com/Tuxemon/Tuxemon
  */
 
+const statusBar = require('./ui/statusBar');
 const config = {
   type: Phaser.AUTO,
   width: 800,
@@ -137,15 +138,7 @@ function create() {
   cursors = this.input.keyboard.createCursorKeys();
 
   // Help text that has a "fixed" position on the screen
-  this.add
-    .text(16, 16, 'Arrow keys to move\nPress "D" to show hitboxes', {
-      font: "18px monospace",
-      fill: "#000000",
-      padding: { x: 20, y: 10 },
-      backgroundColor: "#ffffff"
-    })
-    .setScrollFactor(0)
-    .setDepth(30);
+  statusBar.render().add;
 
   // Debug graphics
   this.input.keyboard.once("keydown_D", event => {
@@ -163,6 +156,8 @@ function create() {
       faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
     });
   });
+
+  
 }
 
 function update(time, delta) {

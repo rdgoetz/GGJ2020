@@ -1,4 +1,4 @@
-const statusBar = require('.statusBar')
+import statusBar from './statusBar'
 
 const state = {
   statusBar = true,

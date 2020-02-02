@@ -4,10 +4,9 @@
  *  - Tuxemon, https://github.com/Tuxemon/Tuxemon
  */
 import UIManager from './ui/uiManager.js';
-const hearts = [];
+var hearts = [];
 var timer;
 var bones;
-var coins;
 
 import World from './game/world.js'
 import Player from './entities/player.js'
@@ -61,11 +60,7 @@ function preload() {
     url: '/js/rexuiplugin.min.js',
     sceneKey: 'rexUI'
 });
-  this.load.spritesheet('heart', '/assets/images/Pot Items.png', {
-    frameWidth: 16,
-    frameHeight: 16,
-    }
-  )
+  UI.loadSpriteSheets(this);
 }
 
 function create() {
@@ -91,19 +86,15 @@ function create() {
   });
 
   // UI ----------------------------------------------
-    for (var i = 0; i < UI.statusBar.display.life; i++) {
-      const sprite = this.add.sprite(50 + (50 * i), 575, "heart").setScrollFactor(0).setScale(2);
-      hearts[i] = sprite;
-    }
-    timer = this.add.text(400, 575, UI.statusBar.display.timer).setScrollFactor(0);
-    bones = this.add.text(600, 575, UI.statusBar.display.bones).setScrollFactor(0);
-    coins = this.add.text(700, 575, UI.statusBar.display.coins).setScrollFactor(0);
+  hearts = UI.setHearts(this);
+  timer = UI.setTimer(this);
+  bones = UI.setBones(this);  
   // END UI -------------------------------------
 }
 
 function update(time, delta) {
   world.update(this, time, delta)
-  UI.update(hearts, timer, bones, coins);
+  UI.update(hearts, timer, bones);
 }
 
 })

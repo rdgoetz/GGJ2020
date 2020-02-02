@@ -8,6 +8,11 @@ export default class World {
     this.configuration = {};
 
     this.lastEntityId = 0;
+
+    this.started = false;
+
+    this.sounds = {};
+    this.music = {};
   }
 
   loadAssets(p3) {
@@ -26,9 +31,47 @@ export default class World {
       atlasURL: '../assets/atlas/full_atlas.json'
     });
 
+    let sounds = [
+      'Attack',
+      'Attack',
+      'Attack',
+      'Attack',
+      'Attack',
+      'Attack',
+      'Attack',
+      'Attack',
+      'Attack',
+      'Attack'
+    ];
+
+    sounds = [
+      'Attack'
+    ]
+
+    sounds.forEach((sound) => {
+      p3.load.audio(sound, '../assets/sounds/effects/'+sound+'.mp3');
+      this.sounds[sound] = null;
+    });
+
+    let music = [
+      //'Music TR 3'
+    ]
+
+    music.forEach((track) => {
+      p3.load.audio(track, '../assets/sounds/music/'+track+'.mp3');
+      this.music[track] = null;
+    });
   }
 
   create(p3) {
+    Object.keys(this.sounds).forEach((sound) => {
+      this.sounds[sound] = p3.sound.add(sound);
+    });
+
+    Object.keys(this.music).forEach((track) => {
+      this.music[track] = p3.sound.add(track);
+    });
+
     this.cursors = p3.input.keyboard.createCursorKeys();
 
     Object.values(this.entitySet).forEach((entityClass) => {
@@ -174,8 +217,20 @@ export default class World {
     entityClass.animations(anims).forEach((animation) => anims.create(animation))
   }
 
+  worldReady(p3) {
+    //this.music['Music TR 3'].play();
+  }
+
   update(p3, time, delta) {
-    Object.values(this.entities).forEach((entity) => entity.update(p3, time, delta))
+    if (!this.started) {
+      this.started = true;
+
+      this.worldReady(p3);
+    }
+    Object.values(this.entities).forEach((entity) => entity.worldStep(p3, time, delta))
+    Object.values(this.entities).filter((entity) => entity.markedForDeath).forEach((entity) => {
+      this.removeEntity(entity);
+    })
   }
 
   unload() {

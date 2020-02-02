@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="298">
+<map version="1.2" tiledversion="1.3.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="299">
  <editorsettings>
   <export target="tuxemon-town.json" format="json"/>
  </editorsettings>
@@ -807,7 +807,7 @@
    </properties>
    <point/>
   </object>
-  <object id="295" name="Path Positon" type="entity" x="654.921" y="328.04">
+  <object id="295" name="Path Positon" type="entity" x="656.247" y="280.288">
    <properties>
     <property name="room_id" value="enter_finish"/>
     <property name="type" value="position"/>
@@ -821,7 +821,7 @@
    </properties>
    <point/>
   </object>
-  <object id="297" name="Door" type="entity" x="655" y="368">
+  <object id="297" name="Door" type="entity" x="656" y="368">
    <properties>
     <property name="room_id" value="door_2"/>
     <property name="type" value="door"/>

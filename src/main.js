@@ -15,6 +15,7 @@ import SkeletonSpawn from './entities/skeletonSpawn.js'
 import Bone from './entities/bone.js'
 import Hero from './entities/hero.js'
 import Vase from './entities/vase.js'
+import BrokenVase from './entities/brokenVase.js'
 import Door from './entities/door.js'
 import Position from './entities/position.js'
 
@@ -25,7 +26,10 @@ const config = {
   width: 800,
   height: 600,
   parent: "game-container",
-  pixelArt: true, 
+  pixelArt: true,
+  audio: {
+    disableWebAudio: true
+  },
   physics: {
     default: "arcade",
     arcade: {
@@ -50,6 +54,7 @@ let world = new World({
   bone: Bone,
   hero: Hero,
   vase: Vase,
+  brokenVase: BrokenVase,
   door: Door,
   position: Position
 });
@@ -59,11 +64,13 @@ let showDebug = false;
 
 function preload() {
   world.loadAssets(this);
+
   this.load.scenePlugin({
     key: 'rexuiplugin',
     url: '/js/rexuiplugin.min.js',
     sceneKey: 'rexUI'
-});
+  });
+
   UI.loadSpriteSheets(this);
 }
 
@@ -99,14 +106,14 @@ function create() {
       faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
     });
 
-    
+
   });
 
   // UI ----------------------------------------------
   UI.getWorld(world);
   hearts = UI.setHearts(this, world.player.hitPoints);
   clock = UI.setTimer(this, timer);
-  bones = UI.setBones(this);  
+  bones = UI.setBones(this);
   // END UI -------------------------------------
 }
 

@@ -4,10 +4,14 @@ export default class Bone extends Entity {
   init() {
     this.physicsBody.body.setAllowDrag(true);
     this.physicsBody.body.useDamping = true;
-    this.physicsBody.body.setDrag(0.99, 0.99);
+    this.physicsBody.body.setDrag(0.95, 0.95);
     this.physicsBody.body.setAcceleration(0,0);
 
-    this.physicsBody.body.setVelocity(100*Math.random() - 50, 100*Math.random() - 50);
+    let xBase = (1-Math.random()*Math.random());
+    let yBase = (1-Math.random()*Math.random());
+    let speed = 1000;
+
+    this.physicsBody.body.setVelocity(speed*xBase - speed/2, speed*yBase - speed/2);
 
     this.tags(['bone']);
   }

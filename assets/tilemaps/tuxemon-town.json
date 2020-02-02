@@ -325,8 +325,8 @@
                  "type":"entity",
                  "visible":true,
                  "width":0,
-                 "x":654.920598122175,
-                 "y":328.039874811638
+                 "x":656.247033989,
+                 "y":280.288183605908
                 }, 
                 {
                  "height":0,
@@ -371,7 +371,7 @@
                  "type":"entity",
                  "visible":true,
                  "width":0,
-                 "x":655,
+                 "x":656,
                  "y":368
                 }],
          "opacity":1,
@@ -381,7 +381,7 @@
          "y":0
         }],
  "nextlayerid":5,
- "nextobjectid":298,
+ "nextobjectid":299,
  "orientation":"orthogonal",
  "properties":[
         {

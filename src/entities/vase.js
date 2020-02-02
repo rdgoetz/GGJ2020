@@ -27,16 +27,12 @@ export default class Vase extends Entity {
     return ['player', 'hero'];
   }
 
-  collidedWith(p3, entity) {
-  }
-
   static animations() {
     return [];
   }
 
-  update(p3, time, delta) {
-  }
-
-  unload() {
+  die(p3) {
+    let brokenVase = this.world.createEntity('brokenVase', this.properties);
+    this.world.addEntity(p3, brokenVase, this.physicsBody.x, this.physicsBody.y)
   }
 }

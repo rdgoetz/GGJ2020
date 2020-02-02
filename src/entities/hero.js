@@ -98,6 +98,7 @@ export default class Hero extends Entity {
   attack(entity) {
     this.attacking = true;
     entity.damage(1);
+    //this.world.sounds['Attack'].play();
 
     setTimeout(() => {
       this.attacking = false;

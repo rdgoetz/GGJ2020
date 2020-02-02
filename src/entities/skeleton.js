@@ -71,7 +71,6 @@ export default class Skeleton extends Entity {
       let bone = this.world.createEntity('bone', {});
       this.world.addEntity(p3, bone, this.physicsBody.x, this.physicsBody.y)
     }
-    this.world.removeEntity(this);
   }
 
   unload() {

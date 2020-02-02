@@ -10,6 +10,8 @@ export default class Entity {
     this.tagSet = [];
     this.properties = properties;
     this.inventory = new Inventory();
+
+    this.markedForDeath = false;
   }
 
   addedToWorld() {
@@ -30,8 +32,16 @@ export default class Entity {
     return this.tagSet.includes(tag);
   }
 
+  kill() {
+    this.markedForDeath = true;
+  }
+
   damage(amount) {
     this.hitPoints -= amount;
+
+    if (!this.healthy()) {
+      this.kill();
+    }
   }
 
   healthy() {
@@ -62,7 +72,12 @@ export default class Entity {
     this.id = id;
   }
 
-  load() {
+  worldStep(p3, time, delta) {
+    if (this.markedForDeath) {
+      this.die(p3);
+    } else {
+      this.update(p3, time, delta);
+    }
   }
 
   update(p3, time, delta) {

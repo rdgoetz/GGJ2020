@@ -1,5 +1,6 @@
 import StatusBar from "./statusBar/statusBar.js"
 var world;
+var time;
 export default class UIManager{
   constructor(game, world) {
     this.statusBar = new StatusBar();
@@ -17,13 +18,14 @@ export default class UIManager{
     this.world = world
   }
 
-  update(hearts, timer, bones) {
+  update(hearts, clock, bones) {
     hearts.forEach(sprite => sprite.visible = false);
-    for (var i = 0; i < this.statusBar.display.life; i++) {
+    for (var i = 0; i < this.world.player.hitPoints; i++) {
       hearts[i].visible = true;
     }
 
-    timer.setText(this.statusBar.display.timer);
+    clock.setText(this.formatTime(this.time));
+
     var boneCount = this.world.player.inventory.items['bone'];
     if (boneCount == undefined) {
       bones.setText( "0x");
@@ -31,8 +33,6 @@ export default class UIManager{
     else {
       bones.setText( boneCount + "x");
     }
-
-    //coins.setText(this.statusBar.display.coins);
   }
 
   loadSpriteSheets(game) {
@@ -44,9 +44,9 @@ export default class UIManager{
     game.load.image('bone', '/assets/images/Bone.png');
   }
 
-  setHearts(game) {
+  setHearts(game, hitPoints) {
     var hearts = []
-    for (var i = 0; i < this.statusBar.display.life; i++) {
+    for (var i = 0; i < hitPoints; i++) {
       const sprite = game.add.sprite(50 + (50 * i), 575, "pot-items")
         .setScrollFactor(0)
         .setScale(2)
@@ -57,19 +57,30 @@ export default class UIManager{
     return hearts;
   }
 
-  setTimer(game) {
+  setTimer(game, time) {
     var text = game.add
-                  .text(400, 560, this.statusBar.display.timer, this.statusBarTextStyle)
+                  .text(400, 560, this.formatTime(time), this.statusBarTextStyle)
                   .setScrollFactor(0);
     return text;
   }
 
   setBones(game) {
     var text = game.add 
-                  .text(700, 560, this.statusBar.display.bones, this.statusBarTextStyle)
+                  .text(700, 560, "0x", this.statusBarTextStyle)
                   .setScrollFactor(0);
     game.add.image(755, 575, 'bone').setScrollFactor(0).setScale(1.6);
     return text;
   }
+
+  formatTime(seconds){
+    // Minutes
+    var minutes = Math.floor(seconds/60);
+    // Seconds
+    var partInSeconds = seconds%60;
+    // Adds left zeros to seconds
+    partInSeconds = partInSeconds.toString().padStart(2,'0');
+    // Returns formated time
+    return `${minutes}:${partInSeconds}`;
+}
 
 }

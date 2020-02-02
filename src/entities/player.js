@@ -3,6 +3,7 @@ import Entity from './entity.js'
 export default class Player extends Entity {
   init() {
     this.speed = 200;
+    this.hitPoints = 3;
     this.tags(['player']);
   }
 

@@ -50,7 +50,7 @@ export default class UIManager{
       const sprite = game.add.sprite(50 + (50 * i), 575, "pot-items")
         .setScrollFactor(0)
         .setScale(2)
-        .setDepth(50)
+        .setDepth(500)
         .setFrame(0);
       hearts[i] = sprite;
     }
@@ -61,7 +61,7 @@ export default class UIManager{
   setTimer(game, time) {
     var text = game.add
                   .text(330, 535, this.formatTime(time), this.statusBarTextStyle)
-                  .setDepth(50)
+                  .setDepth(500)
                   .setScrollFactor(0);
     return text;
   }
@@ -69,12 +69,12 @@ export default class UIManager{
   setBones(game) {
     var text = game.add
                   .text(700, 560, "0x", this.statusBarTextStyle)
-                  .setDepth(50)
+                  .setDepth(500)
                   .setScrollFactor(0);
     game.add.image(755, 575, 'bone')
             .setScrollFactor(0)
             .setScale(1.6)
-            .setDepth(50);
+            .setDepth(500);
     return text;
   }
 

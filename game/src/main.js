@@ -75,7 +75,7 @@ function preload() {
 
   this.load.scenePlugin({
     key: 'rexuiplugin',
-    url: '/js/rexuiplugin.min.js',
+    url: '/game/js/rexuiplugin.min.js',
     sceneKey: 'rexUI'
   });
 

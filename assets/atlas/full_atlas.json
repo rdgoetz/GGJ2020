@@ -4,492 +4,2382 @@
 			"image": "full_atlas.png",
 			"format": "RGBA8888",
 			"size": {
-				"w": 250,
-				"h": 161
+				"w": 2034,
+				"h": 178
 			},
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "atlas.png",
+					"filename": "full_atlas.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
-						"w": 196,
-						"h": 86
+						"w": 1947,
+						"h": 130
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1946,
+						"h": 130
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1946,
+						"h": 130
+					}
+				},
+				{
+					"filename": "sprites/sword_skeleton-4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 1949,
+						"y": 1,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
+					"filename": "sword_skeleton-4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 1949,
+						"y": 35,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
+					"filename": "archer_skeleton-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 30,
+						"h": 32
+					},
+					"frame": {
+						"x": 1949,
+						"y": 69,
+						"w": 30,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Cloud-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
 					},
 					"spriteSourceSize": {
 						"x": 1,
 						"y": 1,
-						"w": 194,
-						"h": 85
+						"w": 31,
+						"h": 30
 					},
 					"frame": {
+						"x": 1949,
+						"y": 103,
+						"w": 31,
+						"h": 30
+					}
+				},
+				{
+					"filename": "sprites/Cloud-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
 						"x": 1,
 						"y": 1,
-						"w": 194,
-						"h": 85
+						"w": 31,
+						"h": 30
+					},
+					"frame": {
+						"x": 1981,
+						"y": 69,
+						"w": 31,
+						"h": 30
 					}
 				},
 				{
-					"filename": "tuxemon-misa/misa-front-walk.000.png",
+					"filename": "sprites/archer_skeleton-4.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
-						"w": 16,
+						"w": 32,
 						"h": 32
 					},
 					"spriteSourceSize": {
-						"x": 0,
-						"y": 10,
-						"w": 16,
-						"h": 22
+						"x": 2,
+						"y": 0,
+						"w": 30,
+						"h": 32
 					},
 					"frame": {
-						"x": 197,
+						"x": 1983,
 						"y": 1,
-						"w": 16,
-						"h": 22
+						"w": 30,
+						"h": 32
 					}
 				},
 				{
-					"filename": "tuxemon-misa/misa-front-walk.001.png",
+					"filename": "item-5.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
-						"w": 16,
+						"w": 32,
 						"h": 32
 					},
 					"spriteSourceSize": {
-						"x": 0,
-						"y": 10,
-						"w": 16,
-						"h": 22
-					},
-					"frame": {
-						"x": 215,
+						"x": 1,
 						"y": 1,
-						"w": 16,
-						"h": 22
-					}
-				},
-				{
-					"filename": "tuxemon-misa/misa-front-walk.002.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 16,
-						"h": 32
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 10,
-						"w": 16,
-						"h": 22
+						"w": 30,
+						"h": 31
 					},
 					"frame": {
-						"x": 233,
-						"y": 1,
-						"w": 16,
-						"h": 22
+						"x": 1983,
+						"y": 35,
+						"w": 30,
+						"h": 31
 					}
 				},
 				{
-					"filename": "tuxemon-misa/misa-front-walk.003.png",
+					"filename": "archer_skeleton-0.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
-						"w": 16,
+						"w": 32,
 						"h": 32
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 10,
-						"w": 16,
-						"h": 22
-					},
-					"frame": {
-						"x": 197,
-						"y": 25,
-						"w": 16,
-						"h": 22
-					}
-				},
-				{
-					"filename": "tuxemon-misa/misa-front.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 16,
-						"h": 32
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 10,
-						"w": 16,
-						"h": 22
-					},
-					"frame": {
-						"x": 215,
-						"y": 25,
-						"w": 16,
-						"h": 22
-					}
-				},
-				{
-					"filename": "tuxemon-misa/misa-back-walk.000.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 16,
-						"h": 32
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 11,
-						"w": 16,
-						"h": 21
-					},
-					"frame": {
-						"x": 233,
-						"y": 25,
-						"w": 16,
-						"h": 21
-					}
-				},
-				{
-					"filename": "tuxemon-misa/misa-back-walk.001.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 16,
-						"h": 32
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 11,
-						"w": 16,
-						"h": 21
-					},
-					"frame": {
-						"x": 233,
-						"y": 48,
-						"w": 16,
-						"h": 21
-					}
-				},
-				{
-					"filename": "tuxemon-misa/misa-back-walk.002.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 16,
-						"h": 32
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 11,
-						"w": 16,
-						"h": 21
-					},
-					"frame": {
-						"x": 197,
-						"y": 49,
-						"w": 16,
-						"h": 21
-					}
-				},
-				{
-					"filename": "tuxemon-misa/misa-back-walk.003.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 16,
-						"h": 32
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 11,
-						"w": 16,
-						"h": 21
-					},
-					"frame": {
-						"x": 215,
-						"y": 49,
-						"w": 16,
-						"h": 21
-					}
-				},
-				{
-					"filename": "tuxemon-misa/misa-back.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 16,
-						"h": 32
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 11,
-						"w": 16,
-						"h": 21
-					},
-					"frame": {
-						"x": 233,
-						"y": 71,
-						"w": 16,
-						"h": 21
-					}
-				},
-				{
-					"filename": "tuxemon-misa/misa-left-walk.001.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 16,
-						"h": 32
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 11,
-						"w": 16,
-						"h": 21
-					},
-					"frame": {
-						"x": 197,
-						"y": 72,
-						"w": 16,
-						"h": 21
-					}
-				},
-				{
-					"filename": "tuxemon-misa/misa-left-walk.003.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 16,
-						"h": 32
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 11,
-						"w": 16,
-						"h": 21
-					},
-					"frame": {
-						"x": 215,
-						"y": 72,
-						"w": 16,
-						"h": 21
-					}
-				},
-				{
-					"filename": "tuxemon-misa/misa-left.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 16,
-						"h": 32
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 11,
-						"w": 16,
-						"h": 21
-					},
-					"frame": {
-						"x": 233,
-						"y": 94,
-						"w": 16,
-						"h": 21
-					}
-				},
-				{
-					"filename": "sword_skeleton/sword_skelton.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 128,
-						"h": 128
 					},
 					"spriteSourceSize": {
 						"x": 1,
 						"y": 0,
-						"w": 91,
-						"h": 66
+						"w": 29,
+						"h": 32
 					},
 					"frame": {
-						"x": 1,
-						"y": 88,
-						"w": 91,
-						"h": 66
+						"x": 1982,
+						"y": 101,
+						"w": 29,
+						"h": 32
 					}
 				},
 				{
-					"filename": "sword_skelton.png",
+					"filename": "Hero-1.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
-						"w": 128,
-						"h": 128
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 20,
+						"h": 32
+					},
+					"frame": {
+						"x": 2013,
+						"y": 101,
+						"w": 20,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Tux_Hat-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 3,
+						"w": 17,
+						"h": 29
+					},
+					"frame": {
+						"x": 2014,
+						"y": 68,
+						"w": 17,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Tux_Hat-11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 3,
+						"w": 17,
+						"h": 29
+					},
+					"frame": {
+						"x": 2015,
+						"y": 1,
+						"w": 17,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Tux_Hat-16.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 3,
+						"w": 17,
+						"h": 29
+					},
+					"frame": {
+						"x": 2015,
+						"y": 32,
+						"w": 17,
+						"h": 29
+					}
+				},
+				{
+					"filename": "archer_skeleton-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 0,
+						"w": 18,
+						"h": 2
+					},
+					"frame": {
+						"x": 2015,
+						"y": 63,
+						"w": 18,
+						"h": 2
+					}
+				},
+				{
+					"filename": "item-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 30,
+						"h": 31
+					},
+					"frame": {
+						"x": 1,
+						"y": 133,
+						"w": 30,
+						"h": 31
+					}
+				},
+				{
+					"filename": "sprites/item-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 30,
+						"h": 31
+					},
+					"frame": {
+						"x": 33,
+						"y": 133,
+						"w": 30,
+						"h": 31
+					}
+				},
+				{
+					"filename": "sprites/item-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 30,
+						"h": 31
+					},
+					"frame": {
+						"x": 65,
+						"y": 133,
+						"w": 30,
+						"h": 31
+					}
+				},
+				{
+					"filename": "item-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 30,
+						"h": 29
+					},
+					"frame": {
+						"x": 97,
+						"y": 133,
+						"w": 30,
+						"h": 29
+					}
+				},
+				{
+					"filename": "sprites/item-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 30,
+						"h": 29
+					},
+					"frame": {
+						"x": 129,
+						"y": 133,
+						"w": 30,
+						"h": 29
+					}
+				},
+				{
+					"filename": "sprites/archer_skeleton-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
 					},
 					"spriteSourceSize": {
 						"x": 1,
 						"y": 0,
-						"w": 91,
-						"h": 66
+						"w": 29,
+						"h": 32
 					},
 					"frame": {
-						"x": 94,
-						"y": 88,
-						"w": 91,
-						"h": 66
+						"x": 161,
+						"y": 133,
+						"w": 29,
+						"h": 32
 					}
 				},
 				{
-					"filename": "tuxemon-misa/misa-right-walk.001.png",
+					"filename": "sprites/archer_skeleton-7.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
-						"w": 16,
+						"w": 32,
 						"h": 32
 					},
 					"spriteSourceSize": {
-						"x": 0,
-						"y": 11,
-						"w": 16,
-						"h": 21
+						"x": 14,
+						"y": 0,
+						"w": 18,
+						"h": 2
 					},
 					"frame": {
-						"x": 187,
-						"y": 95,
-						"w": 16,
-						"h": 21
+						"x": 97,
+						"y": 164,
+						"w": 18,
+						"h": 2
 					}
 				},
 				{
-					"filename": "tuxemon-misa/misa-right-walk.003.png",
+					"filename": "sprites/sword_skeleton-7.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
-						"w": 16,
+						"w": 32,
 						"h": 32
 					},
 					"spriteSourceSize": {
-						"x": 0,
-						"y": 11,
-						"w": 16,
-						"h": 21
+						"x": 14,
+						"y": 0,
+						"w": 18,
+						"h": 2
 					},
 					"frame": {
-						"x": 205,
-						"y": 95,
-						"w": 16,
-						"h": 21
+						"x": 117,
+						"y": 164,
+						"w": 18,
+						"h": 2
 					}
 				},
 				{
-					"filename": "tuxemon-misa/misa-right.png",
+					"filename": "sword_skeleton-7.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
-						"w": 16,
+						"w": 32,
 						"h": 32
 					},
 					"spriteSourceSize": {
-						"x": 0,
-						"y": 11,
-						"w": 16,
-						"h": 21
+						"x": 14,
+						"y": 0,
+						"w": 18,
+						"h": 2
+					},
+					"frame": {
+						"x": 137,
+						"y": 164,
+						"w": 18,
+						"h": 2
+					}
+				},
+				{
+					"filename": "archer_skeleton-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 0,
+						"w": 10,
+						"h": 2
+					},
+					"frame": {
+						"x": 1,
+						"y": 166,
+						"w": 10,
+						"h": 2
+					}
+				},
+				{
+					"filename": "sprites/archer_skeleton-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 0,
+						"w": 10,
+						"h": 2
+					},
+					"frame": {
+						"x": 13,
+						"y": 166,
+						"w": 10,
+						"h": 2
+					}
+				},
+				{
+					"filename": "sprites/sword_skeleton-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 0,
+						"w": 10,
+						"h": 2
+					},
+					"frame": {
+						"x": 25,
+						"y": 166,
+						"w": 10,
+						"h": 2
+					}
+				},
+				{
+					"filename": "sword_skeleton-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 0,
+						"w": 10,
+						"h": 2
+					},
+					"frame": {
+						"x": 37,
+						"y": 166,
+						"w": 10,
+						"h": 2
+					}
+				},
+				{
+					"filename": "archer_skeleton-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 0,
+						"w": 6,
+						"h": 2
+					},
+					"frame": {
+						"x": 49,
+						"y": 166,
+						"w": 6,
+						"h": 2
+					}
+				},
+				{
+					"filename": "sprites/archer_skeleton-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 0,
+						"w": 6,
+						"h": 2
+					},
+					"frame": {
+						"x": 57,
+						"y": 166,
+						"w": 6,
+						"h": 2
+					}
+				},
+				{
+					"filename": "sprites/sword_skeleton-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 0,
+						"w": 6,
+						"h": 2
+					},
+					"frame": {
+						"x": 65,
+						"y": 166,
+						"w": 6,
+						"h": 2
+					}
+				},
+				{
+					"filename": "sword_skeleton-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 0,
+						"w": 6,
+						"h": 2
+					},
+					"frame": {
+						"x": 73,
+						"y": 166,
+						"w": 6,
+						"h": 2
+					}
+				},
+				{
+					"filename": "sprites/sword_skeleton-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 29,
+						"h": 32
+					},
+					"frame": {
+						"x": 192,
+						"y": 133,
+						"w": 29,
+						"h": 32
+					}
+				},
+				{
+					"filename": "sword_skeleton-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 29,
+						"h": 32
 					},
 					"frame": {
 						"x": 223,
-						"y": 117,
-						"w": 16,
-						"h": 21
+						"y": 133,
+						"w": 29,
+						"h": 32
 					}
 				},
 				{
-					"filename": "tuxemon-misa/misa-left-walk.000.png",
+					"filename": "item-2.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
-						"w": 16,
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 2,
+						"w": 28,
+						"h": 29
+					},
+					"frame": {
+						"x": 254,
+						"y": 133,
+						"w": 28,
+						"h": 29
+					}
+				},
+				{
+					"filename": "sprites/item-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 2,
+						"w": 28,
+						"h": 29
+					},
+					"frame": {
+						"x": 284,
+						"y": 133,
+						"w": 28,
+						"h": 29
+					}
+				},
+				{
+					"filename": "item-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 6,
+						"w": 28,
+						"h": 25
+					},
+					"frame": {
+						"x": 314,
+						"y": 133,
+						"w": 28,
+						"h": 25
+					}
+				},
+				{
+					"filename": "sprites/item-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 6,
+						"w": 28,
+						"h": 25
+					},
+					"frame": {
+						"x": 344,
+						"y": 133,
+						"w": 28,
+						"h": 25
+					}
+				},
+				{
+					"filename": "archer_skeleton-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 27,
+						"h": 32
+					},
+					"frame": {
+						"x": 374,
+						"y": 133,
+						"w": 27,
+						"h": 32
+					}
+				},
+				{
+					"filename": "item-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 17,
+						"w": 26,
+						"h": 15
+					},
+					"frame": {
+						"x": 314,
+						"y": 160,
+						"w": 26,
+						"h": 15
+					}
+				},
+				{
+					"filename": "sprites/item-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 17,
+						"w": 26,
+						"h": 15
+					},
+					"frame": {
+						"x": 342,
+						"y": 160,
+						"w": 26,
+						"h": 15
+					}
+				},
+				{
+					"filename": "sprites/archer_skeleton-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 27,
+						"h": 32
+					},
+					"frame": {
+						"x": 403,
+						"y": 133,
+						"w": 27,
+						"h": 32
+					}
+				},
+				{
+					"filename": "sprites/sword_skeleton-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 27,
+						"h": 32
+					},
+					"frame": {
+						"x": 432,
+						"y": 133,
+						"w": 27,
+						"h": 32
+					}
+				},
+				{
+					"filename": "sprites/sword_skeleton-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 0,
+						"w": 27,
+						"h": 32
+					},
+					"frame": {
+						"x": 461,
+						"y": 133,
+						"w": 27,
+						"h": 32
+					}
+				},
+				{
+					"filename": "sword_skeleton-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 27,
+						"h": 32
+					},
+					"frame": {
+						"x": 490,
+						"y": 133,
+						"w": 27,
+						"h": 32
+					}
+				},
+				{
+					"filename": "sword_skeleton-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 0,
+						"w": 27,
+						"h": 32
+					},
+					"frame": {
+						"x": 519,
+						"y": 133,
+						"w": 27,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Cloud-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 2,
+						"w": 27,
+						"h": 24
+					},
+					"frame": {
+						"x": 548,
+						"y": 133,
+						"w": 27,
+						"h": 24
+					}
+				},
+				{
+					"filename": "sprites/Cloud-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 2,
+						"w": 27,
+						"h": 24
+					},
+					"frame": {
+						"x": 577,
+						"y": 133,
+						"w": 27,
+						"h": 24
+					}
+				},
+				{
+					"filename": "archer_skeleton-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
 						"h": 32
 					},
 					"spriteSourceSize": {
 						"x": 0,
-						"y": 12,
-						"w": 16,
-						"h": 20
+						"y": 0,
+						"w": 26,
+						"h": 32
 					},
 					"frame": {
-						"x": 187,
-						"y": 118,
-						"w": 16,
-						"h": 20
+						"x": 606,
+						"y": 133,
+						"w": 26,
+						"h": 32
 					}
 				},
 				{
-					"filename": "tuxemon-misa/misa-left-walk.002.png",
+					"filename": "sprites/archer_skeleton-5.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
-						"w": 16,
+						"w": 32,
 						"h": 32
 					},
 					"spriteSourceSize": {
 						"x": 0,
-						"y": 12,
-						"w": 16,
-						"h": 20
+						"y": 0,
+						"w": 26,
+						"h": 32
 					},
 					"frame": {
-						"x": 205,
-						"y": 118,
-						"w": 16,
-						"h": 20
+						"x": 634,
+						"y": 133,
+						"w": 26,
+						"h": 32
 					}
 				},
 				{
-					"filename": "tuxemon-misa/misa-right-walk.000.png",
+					"filename": "sprites/sword_skeleton-5.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
-						"w": 16,
+						"w": 32,
 						"h": 32
 					},
 					"spriteSourceSize": {
 						"x": 0,
-						"y": 12,
-						"w": 16,
-						"h": 20
+						"y": 0,
+						"w": 26,
+						"h": 32
 					},
 					"frame": {
-						"x": 187,
-						"y": 140,
-						"w": 16,
-						"h": 20
+						"x": 662,
+						"y": 133,
+						"w": 26,
+						"h": 32
 					}
 				},
 				{
-					"filename": "tuxemon-misa/misa-right-walk.002.png",
+					"filename": "sword_skeleton-5.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
-						"w": 16,
+						"w": 32,
 						"h": 32
 					},
 					"spriteSourceSize": {
 						"x": 0,
-						"y": 12,
-						"w": 16,
+						"y": 0,
+						"w": 26,
+						"h": 32
+					},
+					"frame": {
+						"x": 690,
+						"y": 133,
+						"w": 26,
+						"h": 32
+					}
+				},
+				{
+					"filename": "archer_skeleton-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 24,
+						"h": 32
+					},
+					"frame": {
+						"x": 718,
+						"y": 133,
+						"w": 24,
+						"h": 32
+					}
+				},
+				{
+					"filename": "sprites/archer_skeleton-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 24,
+						"h": 32
+					},
+					"frame": {
+						"x": 744,
+						"y": 133,
+						"w": 24,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Tux_Hat-18.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 7,
+						"w": 24,
+						"h": 25
+					},
+					"frame": {
+						"x": 770,
+						"y": 133,
+						"w": 24,
+						"h": 25
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-18.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 7,
+						"w": 24,
+						"h": 25
+					},
+					"frame": {
+						"x": 796,
+						"y": 133,
+						"w": 24,
+						"h": 25
+					}
+				},
+				{
+					"filename": "Tux_Hat-19.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 6,
+						"w": 23,
+						"h": 26
+					},
+					"frame": {
+						"x": 822,
+						"y": 133,
+						"w": 23,
+						"h": 26
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-19.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 6,
+						"w": 23,
+						"h": 26
+					},
+					"frame": {
+						"x": 847,
+						"y": 133,
+						"w": 23,
+						"h": 26
+					}
+				},
+				{
+					"filename": "Hero-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 0,
+						"w": 22,
+						"h": 32
+					},
+					"frame": {
+						"x": 872,
+						"y": 133,
+						"w": 22,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Hero-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 22,
+						"h": 32
+					},
+					"frame": {
+						"x": 896,
+						"y": 133,
+						"w": 22,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Hero-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 22,
+						"h": 32
+					},
+					"frame": {
+						"x": 920,
+						"y": 133,
+						"w": 22,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Hero-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 0,
+						"w": 22,
+						"h": 32
+					},
+					"frame": {
+						"x": 944,
+						"y": 133,
+						"w": 22,
+						"h": 32
+					}
+				},
+				{
+					"filename": "archer_skeleton-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 0,
+						"w": 22,
+						"h": 32
+					},
+					"frame": {
+						"x": 968,
+						"y": 133,
+						"w": 22,
+						"h": 32
+					}
+				},
+				{
+					"filename": "sprites/Hero-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 0,
+						"w": 22,
+						"h": 32
+					},
+					"frame": {
+						"x": 992,
+						"y": 133,
+						"w": 22,
+						"h": 32
+					}
+				},
+				{
+					"filename": "sprites/Hero-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 22,
+						"h": 32
+					},
+					"frame": {
+						"x": 1016,
+						"y": 133,
+						"w": 22,
+						"h": 32
+					}
+				},
+				{
+					"filename": "sprites/Hero-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 22,
+						"h": 32
+					},
+					"frame": {
+						"x": 1040,
+						"y": 133,
+						"w": 22,
+						"h": 32
+					}
+				},
+				{
+					"filename": "sprites/Hero-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 0,
+						"w": 22,
+						"h": 32
+					},
+					"frame": {
+						"x": 1064,
+						"y": 133,
+						"w": 22,
+						"h": 32
+					}
+				},
+				{
+					"filename": "sprites/archer_skeleton-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 0,
+						"w": 22,
+						"h": 32
+					},
+					"frame": {
+						"x": 1088,
+						"y": 133,
+						"w": 22,
+						"h": 32
+					}
+				},
+				{
+					"filename": "sprites/sword_skeleton-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 0,
+						"w": 22,
+						"h": 32
+					},
+					"frame": {
+						"x": 1112,
+						"y": 133,
+						"w": 22,
+						"h": 32
+					}
+				},
+				{
+					"filename": "sword_skeleton-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 0,
+						"w": 22,
+						"h": 32
+					},
+					"frame": {
+						"x": 1136,
+						"y": 133,
+						"w": 22,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Tux_Hat-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 0,
+						"w": 22,
+						"h": 31
+					},
+					"frame": {
+						"x": 1160,
+						"y": 133,
+						"w": 22,
+						"h": 31
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 0,
+						"w": 22,
+						"h": 31
+					},
+					"frame": {
+						"x": 1184,
+						"y": 133,
+						"w": 22,
+						"h": 31
+					}
+				},
+				{
+					"filename": "Tux_Hat-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 6,
+						"w": 22,
+						"h": 26
+					},
+					"frame": {
+						"x": 1208,
+						"y": 133,
+						"w": 22,
+						"h": 26
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 6,
+						"w": 22,
+						"h": 26
+					},
+					"frame": {
+						"x": 1232,
+						"y": 133,
+						"w": 22,
+						"h": 26
+					}
+				},
+				{
+					"filename": "Hero-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 21,
+						"h": 32
+					},
+					"frame": {
+						"x": 1256,
+						"y": 133,
+						"w": 21,
+						"h": 32
+					}
+				},
+				{
+					"filename": "sprites/Hero-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 21,
+						"h": 32
+					},
+					"frame": {
+						"x": 1279,
+						"y": 133,
+						"w": 21,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Tux_Hat-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 21,
+						"h": 29
+					},
+					"frame": {
+						"x": 1302,
+						"y": 133,
+						"w": 21,
+						"h": 29
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 21,
+						"h": 29
+					},
+					"frame": {
+						"x": 1325,
+						"y": 133,
+						"w": 21,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Tux_Hat-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 8,
+						"w": 21,
+						"h": 24
+					},
+					"frame": {
+						"x": 1348,
+						"y": 133,
+						"w": 21,
+						"h": 24
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 8,
+						"w": 21,
+						"h": 24
+					},
+					"frame": {
+						"x": 1371,
+						"y": 133,
+						"w": 21,
+						"h": 24
+					}
+				},
+				{
+					"filename": "sprites/Hero-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 20,
+						"h": 32
+					},
+					"frame": {
+						"x": 1394,
+						"y": 133,
+						"w": 20,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Tux_Hat-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 6,
+						"w": 20,
+						"h": 26
+					},
+					"frame": {
+						"x": 1416,
+						"y": 133,
+						"w": 20,
+						"h": 26
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 6,
+						"w": 20,
+						"h": 26
+					},
+					"frame": {
+						"x": 1438,
+						"y": 133,
+						"w": 20,
+						"h": 26
+					}
+				},
+				{
+					"filename": "Tux_Hat-21.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 7,
+						"w": 20,
+						"h": 25
+					},
+					"frame": {
+						"x": 1460,
+						"y": 133,
+						"w": 20,
+						"h": 25
+					}
+				},
+				{
+					"filename": "Tux_Hat-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 7,
+						"w": 20,
+						"h": 25
+					},
+					"frame": {
+						"x": 1482,
+						"y": 133,
+						"w": 20,
+						"h": 25
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-21.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 7,
+						"w": 20,
+						"h": 25
+					},
+					"frame": {
+						"x": 1504,
+						"y": 133,
+						"w": 20,
+						"h": 25
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 7,
+						"w": 20,
+						"h": 25
+					},
+					"frame": {
+						"x": 1526,
+						"y": 133,
+						"w": 20,
+						"h": 25
+					}
+				},
+				{
+					"filename": "Bone-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 6,
+						"w": 20,
 						"h": 20
 					},
 					"frame": {
-						"x": 205,
-						"y": 140,
-						"w": 16,
+						"x": 1548,
+						"y": 133,
+						"w": 20,
 						"h": 20
+					}
+				},
+				{
+					"filename": "sprites/Bone-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 6,
+						"w": 20,
+						"h": 20
+					},
+					"frame": {
+						"x": 1570,
+						"y": 133,
+						"w": 20,
+						"h": 20
+					}
+				},
+				{
+					"filename": "Tux_Hat-20.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 6,
+						"w": 19,
+						"h": 26
+					},
+					"frame": {
+						"x": 1592,
+						"y": 133,
+						"w": 19,
+						"h": 26
+					}
+				},
+				{
+					"filename": "item-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 7,
+						"w": 18,
+						"h": 22
+					},
+					"frame": {
+						"x": 1548,
+						"y": 155,
+						"w": 18,
+						"h": 22
+					}
+				},
+				{
+					"filename": "sprites/item-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 7,
+						"w": 18,
+						"h": 22
+					},
+					"frame": {
+						"x": 1568,
+						"y": 155,
+						"w": 18,
+						"h": 22
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-20.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 6,
+						"w": 19,
+						"h": 26
+					},
+					"frame": {
+						"x": 1613,
+						"y": 133,
+						"w": 19,
+						"h": 26
+					}
+				},
+				{
+					"filename": "Tux_Hat-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 4,
+						"w": 18,
+						"h": 28
+					},
+					"frame": {
+						"x": 1634,
+						"y": 133,
+						"w": 18,
+						"h": 28
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 4,
+						"w": 18,
+						"h": 28
+					},
+					"frame": {
+						"x": 1654,
+						"y": 133,
+						"w": 18,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Tux_Hat-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 6,
+						"w": 18,
+						"h": 26
+					},
+					"frame": {
+						"x": 1674,
+						"y": 133,
+						"w": 18,
+						"h": 26
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 6,
+						"w": 18,
+						"h": 26
+					},
+					"frame": {
+						"x": 1694,
+						"y": 133,
+						"w": 18,
+						"h": 26
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 3,
+						"w": 17,
+						"h": 29
+					},
+					"frame": {
+						"x": 1714,
+						"y": 133,
+						"w": 17,
+						"h": 29
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 3,
+						"w": 17,
+						"h": 29
+					},
+					"frame": {
+						"x": 1733,
+						"y": 133,
+						"w": 17,
+						"h": 29
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-16.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 3,
+						"w": 17,
+						"h": 29
+					},
+					"frame": {
+						"x": 1752,
+						"y": 133,
+						"w": 17,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Tux_Hat-10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 4,
+						"w": 17,
+						"h": 28
+					},
+					"frame": {
+						"x": 1771,
+						"y": 133,
+						"w": 17,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Tux_Hat-15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 4,
+						"w": 17,
+						"h": 28
+					},
+					"frame": {
+						"x": 1790,
+						"y": 133,
+						"w": 17,
+						"h": 28
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 4,
+						"w": 17,
+						"h": 28
+					},
+					"frame": {
+						"x": 1809,
+						"y": 133,
+						"w": 17,
+						"h": 28
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 4,
+						"w": 17,
+						"h": 28
+					},
+					"frame": {
+						"x": 1828,
+						"y": 133,
+						"w": 17,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Tux_Hat-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 6,
+						"w": 17,
+						"h": 26
+					},
+					"frame": {
+						"x": 1847,
+						"y": 133,
+						"w": 17,
+						"h": 26
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 6,
+						"w": 17,
+						"h": 26
+					},
+					"frame": {
+						"x": 1866,
+						"y": 133,
+						"w": 17,
+						"h": 26
+					}
+				},
+				{
+					"filename": "Tux_Hat-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 7,
+						"w": 17,
+						"h": 25
+					},
+					"frame": {
+						"x": 1885,
+						"y": 133,
+						"w": 17,
+						"h": 25
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 7,
+						"w": 17,
+						"h": 25
+					},
+					"frame": {
+						"x": 1904,
+						"y": 133,
+						"w": 17,
+						"h": 25
+					}
+				},
+				{
+					"filename": "Tux_Hat-17.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 3,
+						"w": 16,
+						"h": 29
+					},
+					"frame": {
+						"x": 1923,
+						"y": 133,
+						"w": 16,
+						"h": 29
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-17.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 3,
+						"w": 16,
+						"h": 29
+					},
+					"frame": {
+						"x": 1941,
+						"y": 135,
+						"w": 16,
+						"h": 29
+					}
+				},
+				{
+					"filename": "Tux_Hat-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 5,
+						"w": 16,
+						"h": 27
+					},
+					"frame": {
+						"x": 1959,
+						"y": 135,
+						"w": 16,
+						"h": 27
+					}
+				},
+				{
+					"filename": "Tux_Hat-14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 5,
+						"w": 16,
+						"h": 27
+					},
+					"frame": {
+						"x": 1977,
+						"y": 135,
+						"w": 16,
+						"h": 27
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 5,
+						"w": 16,
+						"h": 27
+					},
+					"frame": {
+						"x": 1995,
+						"y": 135,
+						"w": 16,
+						"h": 27
+					}
+				},
+				{
+					"filename": "sprites/Tux_Hat-14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 5,
+						"w": 16,
+						"h": 27
+					},
+					"frame": {
+						"x": 2013,
+						"y": 135,
+						"w": 16,
+						"h": 27
 					}
 				}
 			]
@@ -498,6 +2388,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:b9a6dc17f5344e8772fa1b86f84d0553:7179ba3a2f70f2fb80102f896538a6f6:843549fdf6b65ad14f97a53f6db736b3$"
+		"smartupdate": "$TexturePacker:SmartUpdate:a282094ab90fba99c1be16e61184418b:b3bf4b93d5a3b437c6f87b122bbd3b9c:843549fdf6b65ad14f97a53f6db736b3$"
 	}
 }

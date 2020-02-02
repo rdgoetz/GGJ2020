@@ -9,6 +9,13 @@ var timer;
 var bones;
 var coins;
 
+import World from './game/world.js'
+import Player from './entities/player.js'
+import Skeleton from './entities/skeleton.js'
+import SkeletonSpawn from './entities/skeletonSpawn.js'
+import Bone from './entities/bone.js'
+import Hero from './entities/hero.js'
+import Vase from './entities/vase.js'
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -35,15 +42,13 @@ const game = new Phaser.Game(config);
 let cursors;
 let player;
 
-let World = window.world;
-let Player = window.player;
-let Skeleton = window.skeleton;
-let SkeletonSpawn = window.skeletonSpawn;
-
 let world = new World({
   player: Player,
   skeleton: Skeleton,
-  skeletonSpawn: SkeletonSpawn
+  skeletonSpawn: SkeletonSpawn,
+  bone: Bone,
+  hero: Hero,
+  vase: Vase,
 });
 
 var UI = new UIManager(this);
@@ -57,8 +62,8 @@ function preload() {
     sceneKey: 'rexUI'
 });
   this.load.spritesheet('heart', '/assets/images/Pot Items.png', {
-    frameWidth: 16, 
-    frameHeight: 16, 
+    frameWidth: 16,
+    frameHeight: 16,
     }
   )
 }

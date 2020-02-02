@@ -1,31 +1,33 @@
-let Entity = window.entity;
+import Entity from './entity.js'
 
-class Player extends Entity {
+export default class Player extends Entity {
   init() {
     this.speed = 200;
+    this.tags = ['player']
   }
 
   sprite() {
     return {
       size: {
-        w: 30,
-        h: 40
+        w: 16,
+        h: 32
       },
       offeset: {
-        x: 0,
-        y: 24
+        x: 8,
+        y: 0
       },
       sheet: 'atlas',
-      frame: 'misa-front'
+      frame: 'Tux_Hat-0.png'
     }
   }
 
   static animations(anims) {
+    return [];
     return [
       {
-        key: "misa-left-walk",
+        key: "Tux_Hat-up",
         frames: anims.generateFrameNames("atlas", {
-          prefix: "sword_skelton-",
+          prefix: "Tux_Hat-",
           start: 0,
           end: 3,
           zeroPad: 1
@@ -34,9 +36,9 @@ class Player extends Entity {
         repeat: -1
       },
       {
-        key: "misa-right-walk",
+        key: "Tux_Hat-down",
         frames: anims.generateFrameNames("atlas", {
-          prefix: "misa-right-walk.",
+          prefix: "Tux_Hat-",
           start: 0,
           end: 3,
           zeroPad: 3
@@ -45,9 +47,10 @@ class Player extends Entity {
         repeat: -1
       },
       {
-        key: "misa-front-walk",
+        key: "Tux_Hat-left",
         frames: anims.generateFrameNames("atlas", {
-          prefix: "misa-front-walk.",
+          prefix: "Tux_Hat-",
+
           start: 0,
           end: 3,
           zeroPad: 3
@@ -56,9 +59,9 @@ class Player extends Entity {
         repeat: -1
       },
       {
-        key: "misa-back-walk",
+        key: "Tux_Hat-right",
         frames: anims.generateFrameNames("atlas", {
-          prefix: "misa-back-walk.",
+          prefix: "Tux_Hat-",
           start: 0,
           end: 3,
           zeroPad: 3
@@ -96,24 +99,25 @@ class Player extends Entity {
     // Normalize and scale the velocity so that this.physicsBody can't move faster along a diagonal
     this.physicsBody.body.velocity.normalize().scale(this.speed);
 
+    /*
     // Update the animation last and give left/right animations precedence over up/down animations
     if (cursors.left.isDown) {
-      this.physicsBody.anims.play("misa-left-walk", true);
+      this.physicsBody.anims.play("Tux_Hat-left", true);
     } else if (cursors.right.isDown) {
-      this.physicsBody.anims.play("misa-right-walk", true);
+      this.physicsBody.anims.play("Tux_Hat-right", true);
     } else if (cursors.up.isDown) {
-      this.physicsBody.anims.play("misa-back-walk", true);
+      this.physicsBody.anims.play("Tux_Hat-up", true);
     } else if (cursors.down.isDown) {
-      this.physicsBody.anims.play("misa-front-walk", true);
+      this.physicsBody.anims.play("Tux_Hat-down", true);
     } else {
       this.physicsBody.anims.stop();
 
       // If we were moving, pick and idle frame to use
-      if (prevVelocity.x < 0) this.physicsBody.setTexture("atlas", "misa-left");
-      else if (prevVelocity.x > 0) this.physicsBody.setTexture("atlas", "misa-right");
-      else if (prevVelocity.y < 0) this.physicsBody.setTexture("atlas", "misa-back");
-      else if (prevVelocity.y > 0) this.physicsBody.setTexture("atlas", "misa-front");
-    }
+      if (prevVelocity.x < 0) this.physicsBody.setTexture("atlas", "Tux_Hat-0");
+      else if (prevVelocity.x > 0) this.physicsBody.setTexture("atlas", "Tux_Hat-0");
+      else if (prevVelocity.y < 0) this.physicsBody.setTexture("atlas", "Tux_Hat-0");
+      else if (prevVelocity.y > 0) this.physicsBody.setTexture("atlas", "Tux_Hat-0");
+    }*/
   }
 
   unload() {

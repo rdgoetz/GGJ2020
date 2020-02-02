@@ -5,6 +5,15 @@
  */
 import UIManager from './ui/uiManager.js';
 import Timer from './ui/statusBar/timer.js';
+
+import World from './game/world.js'
+import Player from './entities/player.js'
+import Skeleton from './entities/skeleton.js'
+import SkeletonSpawn from './entities/skeletonSpawn.js'
+import Bone from './entities/bone.js'
+import Hero from './entities/hero.js'
+import Vase from './entities/vase.js'
+
 document.addEventListener("DOMContentLoaded", function(event) {
 
 const config = {
@@ -12,7 +21,7 @@ const config = {
   width: 800,
   height: 600,
   parent: "game-container",
-  pixelArt: true, 
+  pixelArt: true,
   dom: {
     createContainer: true
   },
@@ -33,15 +42,13 @@ const game = new Phaser.Game(config);
 let cursors;
 let player;
 
-let World = window.world;
-let Player = window.player;
-let Skeleton = window.skeleton;
-let SkeletonSpawn = window.skeletonSpawn;
-
 let world = new World({
   player: Player,
   skeleton: Skeleton,
-  skeletonSpawn: SkeletonSpawn
+  skeletonSpawn: SkeletonSpawn,
+  bone: Bone,
+  hero: Hero,
+  vase: Vase,
 });
 
 var UI = new UIManager();
@@ -55,8 +62,8 @@ function preload() {
     sceneKey: 'rexUI'
 });
   this.load.spritesheet('heart', '/assets/images/Pot Items.png', {
-    frameWidth: 16, 
-    frameHeight: 16, 
+    frameWidth: 16,
+    frameHeight: 16,
     }
   )
 }
@@ -84,7 +91,7 @@ function create() {
   });
 
   // UI ----------------------------------------------
-  
+
     for (var i = 0; i < UI.statusBar.display.life; i++) {
       const sprite = this.add.sprite(50 + (50 * i), 575, "heart").setScrollFactor(0).setScale(2);
     }

@@ -5,8 +5,6 @@ export default class World {
     this.entitySet = entitySet;
     this.cursors = null;
 
-    this.configuration = {};
-
     this.lastEntityId = 0;
   }
 
@@ -55,21 +53,14 @@ export default class World {
     // Object layers in Tiled let you embed extra info into a map - like a spawn point or custom
     // collision shapes. In the tmx file, there's an object layer with a point named "Spawn Point"
     map.getObjectLayer('Objects').objects.forEach((object) => {
-      if (object.properties && object.type == 'entity') {
-        let properties = {}
+      if (object.properties) {
+        let spawnProp = object.properties.find((property) => property.name === 'spawns');
 
-        object.properties.forEach((property) => {
-          properties[property.name] = property.value;
-        });
-
-
-        let type = object.properties.find((property) => property.name === 'type');
-
-        let newEntity = this.createEntity(type.value, properties);
+        let newEntity = this.createEntity(spawnProp.value);
 
         let physicsBody = this.addEntity(p3, newEntity, object.x, object.y)
 
-        if (type.value == 'player') {
+        if (spawnProp.value == 'player') {
           this.player = newEntity
 
           const camera = p3.cameras.main;
@@ -77,46 +68,18 @@ export default class World {
           camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
         }
       }
-
     });
-
-    map.getObjectLayer('Objects').objects.forEach((object) => {
-      if (object.properties && object.type == 'config') {
-        let config = {}
-
-        object.properties.forEach((property) => {
-          try {
-            config[property.name] = JSON.parse(property.value);
-          } catch {
-            config[property.name] = property.value;
-          }
-        });
-
-        let key = config['key'];
-        delete config['key'];
-
-        if (config.usePosition) {
-          config = {
-            x: object.x,
-            y: object.y
-          }
-        }
-
-        this.configuration[key] = config;
-      }
-    })
-
   }
 
   nextEntityId() {
     return this.lastEntityId++;
   }
 
-  createEntity(type, properties) {
+  createEntity(type) {
     let EntityClass = this.entitySet[type]
 
     if (EntityClass) {
-      return new EntityClass(this, properties);
+      return new EntityClass(this);
     }
 
     throw 'Invalid Entity Type';

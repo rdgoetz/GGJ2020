@@ -34,7 +34,7 @@
         <key>dataFormat</key>
         <string>phaser</string>
         <key>textureFileName</key>
-        <filename></filename>
+        <filename>full_atlas.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>pvrCompressionQuality</key>
@@ -56,7 +56,7 @@
         <key>jxrCompressionLevel</key>
         <uint>0</uint>
         <key>ditherType</key>
-        <enum type="SettingsBase::DitherType">NearestNeighbour</enum>
+        <enum type="SettingsBase::DitherType">PngQuantLow</enum>
         <key>backgroundColor</key>
         <uint>0</uint>
         <key>libGdx</key>
@@ -82,7 +82,7 @@
         <key>atfFormats</key>
         <string></string>
         <key>textureFormat</key>
-        <enum type="SettingsBase::TextureFormat">png</enum>
+        <enum type="SettingsBase::TextureFormat">png8</enum>
         <key>borderPadding</key>
         <uint>0</uint>
         <key>maxTextureSize</key>
@@ -181,21 +181,6 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">atlas.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>49,22,98,43</rect>
-                <key>scale9Paddings</key>
-                <rect>49,22,98,43</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
             <key type="filename">full_atlas.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -205,14 +190,68 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>63,40,125,81</rect>
+                <rect>314,16,628,32</rect>
                 <key>scale9Paddings</key>
-                <rect>63,40,125,81</rect>
+                <rect>314,16,628,32</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">sword_skeleton/sword_skelton.png</key>
-            <key type="filename">sword_skelton.png</key>
+            <key type="filename">sprites/Bone-0.png</key>
+            <key type="filename">sprites/Cloud-0.png</key>
+            <key type="filename">sprites/Cloud-1.png</key>
+            <key type="filename">sprites/Hero-0.png</key>
+            <key type="filename">sprites/Hero-1.png</key>
+            <key type="filename">sprites/Hero-2.png</key>
+            <key type="filename">sprites/Hero-3.png</key>
+            <key type="filename">sprites/Hero-4.png</key>
+            <key type="filename">sprites/Hero-5.png</key>
+            <key type="filename">sprites/Tux_Hat-0.png</key>
+            <key type="filename">sprites/Tux_Hat-1.png</key>
+            <key type="filename">sprites/Tux_Hat-10.png</key>
+            <key type="filename">sprites/Tux_Hat-11.png</key>
+            <key type="filename">sprites/Tux_Hat-12.png</key>
+            <key type="filename">sprites/Tux_Hat-13.png</key>
+            <key type="filename">sprites/Tux_Hat-14.png</key>
+            <key type="filename">sprites/Tux_Hat-15.png</key>
+            <key type="filename">sprites/Tux_Hat-16.png</key>
+            <key type="filename">sprites/Tux_Hat-17.png</key>
+            <key type="filename">sprites/Tux_Hat-18.png</key>
+            <key type="filename">sprites/Tux_Hat-19.png</key>
+            <key type="filename">sprites/Tux_Hat-2.png</key>
+            <key type="filename">sprites/Tux_Hat-20.png</key>
+            <key type="filename">sprites/Tux_Hat-21.png</key>
+            <key type="filename">sprites/Tux_Hat-3.png</key>
+            <key type="filename">sprites/Tux_Hat-4.png</key>
+            <key type="filename">sprites/Tux_Hat-5.png</key>
+            <key type="filename">sprites/Tux_Hat-6.png</key>
+            <key type="filename">sprites/Tux_Hat-7.png</key>
+            <key type="filename">sprites/Tux_Hat-8.png</key>
+            <key type="filename">sprites/Tux_Hat-9.png</key>
+            <key type="filename">sprites/archer_skeleton-0.png</key>
+            <key type="filename">sprites/archer_skeleton-1.png</key>
+            <key type="filename">sprites/archer_skeleton-2.png</key>
+            <key type="filename">sprites/archer_skeleton-3.png</key>
+            <key type="filename">sprites/archer_skeleton-4.png</key>
+            <key type="filename">sprites/archer_skeleton-5.png</key>
+            <key type="filename">sprites/archer_skeleton-6.png</key>
+            <key type="filename">sprites/archer_skeleton-7.png</key>
+            <key type="filename">sprites/archer_skeleton-8.png</key>
+            <key type="filename">sprites/item-0.png</key>
+            <key type="filename">sprites/item-1.png</key>
+            <key type="filename">sprites/item-2.png</key>
+            <key type="filename">sprites/item-3.png</key>
+            <key type="filename">sprites/item-4.png</key>
+            <key type="filename">sprites/item-5.png</key>
+            <key type="filename">sprites/item-6.png</key>
+            <key type="filename">sprites/sword_skeleton-0.png</key>
+            <key type="filename">sprites/sword_skeleton-1.png</key>
+            <key type="filename">sprites/sword_skeleton-2.png</key>
+            <key type="filename">sprites/sword_skeleton-3.png</key>
+            <key type="filename">sprites/sword_skeleton-4.png</key>
+            <key type="filename">sprites/sword_skeleton-5.png</key>
+            <key type="filename">sprites/sword_skeleton-6.png</key>
+            <key type="filename">sprites/sword_skeleton-7.png</key>
+            <key type="filename">sprites/sword_skeleton-8.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -221,43 +260,9 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>32,32,64,64</rect>
+                <rect>8,8,16,16</rect>
                 <key>scale9Paddings</key>
-                <rect>32,32,64,64</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">tuxemon-misa/misa-back-walk.000.png</key>
-            <key type="filename">tuxemon-misa/misa-back-walk.001.png</key>
-            <key type="filename">tuxemon-misa/misa-back-walk.002.png</key>
-            <key type="filename">tuxemon-misa/misa-back-walk.003.png</key>
-            <key type="filename">tuxemon-misa/misa-back.png</key>
-            <key type="filename">tuxemon-misa/misa-front-walk.000.png</key>
-            <key type="filename">tuxemon-misa/misa-front-walk.001.png</key>
-            <key type="filename">tuxemon-misa/misa-front-walk.002.png</key>
-            <key type="filename">tuxemon-misa/misa-front-walk.003.png</key>
-            <key type="filename">tuxemon-misa/misa-front.png</key>
-            <key type="filename">tuxemon-misa/misa-left-walk.000.png</key>
-            <key type="filename">tuxemon-misa/misa-left-walk.001.png</key>
-            <key type="filename">tuxemon-misa/misa-left-walk.002.png</key>
-            <key type="filename">tuxemon-misa/misa-left-walk.003.png</key>
-            <key type="filename">tuxemon-misa/misa-left.png</key>
-            <key type="filename">tuxemon-misa/misa-right-walk.000.png</key>
-            <key type="filename">tuxemon-misa/misa-right-walk.001.png</key>
-            <key type="filename">tuxemon-misa/misa-right-walk.002.png</key>
-            <key type="filename">tuxemon-misa/misa-right-walk.003.png</key>
-            <key type="filename">tuxemon-misa/misa-right.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>4,8,8,16</rect>
-                <key>scale9Paddings</key>
-                <rect>4,8,8,16</rect>
+                <rect>8,8,16,16</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -265,6 +270,62 @@
         <key>fileList</key>
         <array>
             <filename>.</filename>
+            <filename>sprites/Bone-0.png</filename>
+            <filename>sprites/Cloud-0.png</filename>
+            <filename>sprites/Cloud-1.png</filename>
+            <filename>sprites/Hero-0.png</filename>
+            <filename>sprites/Hero-1.png</filename>
+            <filename>sprites/Hero-2.png</filename>
+            <filename>sprites/Hero-3.png</filename>
+            <filename>sprites/Hero-4.png</filename>
+            <filename>sprites/Hero-5.png</filename>
+            <filename>sprites/Tux_Hat-0.png</filename>
+            <filename>sprites/Tux_Hat-1.png</filename>
+            <filename>sprites/Tux_Hat-10.png</filename>
+            <filename>sprites/Tux_Hat-11.png</filename>
+            <filename>sprites/Tux_Hat-12.png</filename>
+            <filename>sprites/Tux_Hat-13.png</filename>
+            <filename>sprites/Tux_Hat-14.png</filename>
+            <filename>sprites/Tux_Hat-15.png</filename>
+            <filename>sprites/Tux_Hat-16.png</filename>
+            <filename>sprites/Tux_Hat-17.png</filename>
+            <filename>sprites/Tux_Hat-18.png</filename>
+            <filename>sprites/Tux_Hat-19.png</filename>
+            <filename>sprites/Tux_Hat-2.png</filename>
+            <filename>sprites/Tux_Hat-20.png</filename>
+            <filename>sprites/Tux_Hat-21.png</filename>
+            <filename>sprites/Tux_Hat-3.png</filename>
+            <filename>sprites/Tux_Hat-4.png</filename>
+            <filename>sprites/Tux_Hat-5.png</filename>
+            <filename>sprites/Tux_Hat-6.png</filename>
+            <filename>sprites/Tux_Hat-7.png</filename>
+            <filename>sprites/Tux_Hat-8.png</filename>
+            <filename>sprites/Tux_Hat-9.png</filename>
+            <filename>sprites/archer_skeleton-0.png</filename>
+            <filename>sprites/archer_skeleton-1.png</filename>
+            <filename>sprites/archer_skeleton-2.png</filename>
+            <filename>sprites/archer_skeleton-3.png</filename>
+            <filename>sprites/archer_skeleton-4.png</filename>
+            <filename>sprites/archer_skeleton-5.png</filename>
+            <filename>sprites/archer_skeleton-6.png</filename>
+            <filename>sprites/archer_skeleton-7.png</filename>
+            <filename>sprites/archer_skeleton-8.png</filename>
+            <filename>sprites/item-0.png</filename>
+            <filename>sprites/item-1.png</filename>
+            <filename>sprites/item-2.png</filename>
+            <filename>sprites/item-3.png</filename>
+            <filename>sprites/item-4.png</filename>
+            <filename>sprites/item-5.png</filename>
+            <filename>sprites/item-6.png</filename>
+            <filename>sprites/sword_skeleton-0.png</filename>
+            <filename>sprites/sword_skeleton-1.png</filename>
+            <filename>sprites/sword_skeleton-2.png</filename>
+            <filename>sprites/sword_skeleton-3.png</filename>
+            <filename>sprites/sword_skeleton-4.png</filename>
+            <filename>sprites/sword_skeleton-5.png</filename>
+            <filename>sprites/sword_skeleton-6.png</filename>
+            <filename>sprites/sword_skeleton-7.png</filename>
+            <filename>sprites/sword_skeleton-8.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

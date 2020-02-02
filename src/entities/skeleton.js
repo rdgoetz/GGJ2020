@@ -1,22 +1,24 @@
-let Entity = window.entity;
+import Entity from './entity.js'
 
-class Skeleton extends Entity {
+export default class Skeleton extends Entity {
   init() {
     this.speed = 100;
+    this.dieAt = 0;
+    this.lifetime = 3000;
   }
 
   sprite() {
     return {
       size: {
-        w: 30,
-        h: 40
+        w: 32,
+        h: 32
       },
       offeset: {
         x: 0,
-        y: 24
+        y: 0
       },
       sheet: 'atlas',
-      frame: 'sword_skelton-5'
+      frame: 'sword_skeleton-0.png'
     }
   }
 
@@ -24,10 +26,16 @@ class Skeleton extends Entity {
     return [];
   }
 
-  load() {
+  collisionList() {
+    return ['player', 'hero'];
   }
 
-  render() {
+  collidedWith(p3, entity) {
+    if (entity.hasTag('player')) {
+    }
+  }
+
+  load() {
   }
 
   update(p3, time, delta) {
@@ -53,10 +61,25 @@ class Skeleton extends Entity {
 
     // Normalize and scale the velocity so that this.physicsBody can't move faster along a diagonal
     this.physicsBody.body.velocity.normalize().scale(this.speed);
+
+    if (this.dieAt == 0) { this.dieAt = time + this.lifetime; }
+
+    if (this.dieAt < time) {
+      this.die(p3);
+    }
+  }
+
+  die(p3) {
+    let skeletonSpawn = this.world.createEntity('skeletonSpawn', this.properties);
+    this.world.addEntity(p3, skeletonSpawn, this.physicsBody.x, this.physicsBody.y)
+
+    for(var i = 0; i<3; i++) {
+      let bone = this.world.createEntity('bone', {});
+      this.world.addEntity(p3, bone, this.physicsBody.x, this.physicsBody.y)
+    }
+    this.world.removeEntity(this);
   }
 
   unload() {
   }
 }
-
-window.skeleton = Skeleton;

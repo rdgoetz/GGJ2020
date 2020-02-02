@@ -22,6 +22,8 @@ export default class World {
     this.readyCallbacks = [];
 
     this.rooms = {};
+
+    this.updating = true;
   }
 
   onReady(callback) {
@@ -29,11 +31,37 @@ export default class World {
   }
 
   win() {
-    alert('You Win!');
+    this.updating = false;
+
+    let style = {
+      fontFamily: 'Courier',
+      fontSize: '48px',
+      fill: '#22AA44',
+      strokeThickness: 2,
+      stroke: '#FFFFFF'
+    };
+
+    var text = this.p3.add
+                  .text(200, 250, 'Level Cleared', style)
+                  .setDepth(50)
+                  .setScrollFactor(0);
   }
 
   lose() {
-    alert('You Lose');
+    this.updating = false;
+
+    let style = {
+      fontFamily: 'Courier',
+      fontSize: '48px',
+      fill: '#CC0022',
+      strokeThickness: 2,
+      stroke: '#000000'
+    };
+
+    var text = this.p3.add
+                  .text(250, 250, 'Game Over', style)
+                  .setDepth(50)
+                  .setScrollFactor(0);
   }
 
   newHero() {
@@ -278,15 +306,19 @@ export default class World {
   }
 
   update(p3, time, delta) {
-    if (!this.started) {
-      this.started = true;
-      this.worldReady(p3);
-    }
+    if (this.updating) {
+      if (!this.started) {
+        this.started = true;
+        this.worldReady(p3);
+      }
 
-    Object.values(this.entities).forEach((entity) => entity.worldStep(p3, time, delta))
-    Object.values(this.entities).filter((entity) => entity.markedForDeath).forEach((entity) => {
-      this.removeEntity(entity);
-    })
+      Object.values(this.entities).forEach((entity) => entity.worldStep(p3, time, delta))
+      Object.values(this.entities).filter((entity) => entity.markedForDeath).forEach((entity) => {
+        this.removeEntity(entity);
+      })
+    } else {
+      debugger;
+    }
   }
 
   unload() {

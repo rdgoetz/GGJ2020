@@ -239,7 +239,7 @@
                  "visible":true,
                  "width":0,
                  "x":657.199379176926,
-                 "y":1009.90265212803
+                 "y":1011.67350390774
                 }, 
                 {
                  "height":0,
@@ -490,7 +490,7 @@
                         {
                          "name":"room_id",
                          "type":"string",
-                         "value":"final"
+                         "value":""
                         }, 
                         {
                          "name":"type",
@@ -618,7 +618,7 @@
          "y":0
         }],
  "nextlayerid":5,
- "nextobjectid":316,
+ "nextobjectid":317,
  "orientation":"orthogonal",
  "properties":[
         {

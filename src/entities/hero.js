@@ -56,7 +56,11 @@ export default class Hero extends Entity {
 
     if (entity.hasTag('location') && entity.id == this.goalEntity.id) {
       delete this.currentRoomEntities[entity.id];
-      this.acquireNextGoal()
+      if (entity.properties.exit) {
+        this.kill();
+      } else {
+        this.acquireNextGoal();
+      }
     }
   }
 

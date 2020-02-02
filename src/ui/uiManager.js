@@ -9,7 +9,8 @@ export default class UIManager{
       fontSize: '28px',
       fill: '#fff',
       strokeThickness: 1,
-      stroke: '#c9c9c9'
+      stroke: '#c9c9c9',
+      align: 'center'
     }
   }
 
@@ -60,7 +61,7 @@ export default class UIManager{
 
   setTimer(game, time) {
     var text = game.add
-                  .text(400, 560, this.formatTime(time), this.statusBarTextStyle)
+                  .text(330, 535, this.formatTime(time), this.statusBarTextStyle)
                   .setDepth(50)
                   .setScrollFactor(0);
     return text;
@@ -71,7 +72,10 @@ export default class UIManager{
                   .text(700, 560, "0x", this.statusBarTextStyle)
                   .setDepth(50)
                   .setScrollFactor(0);
-    game.add.image(755, 575, 'bone').setScrollFactor(0).setScale(1.6);
+    game.add.image(755, 575, 'bone')
+            .setScrollFactor(0)
+            .setScale(1.6)
+            .setDepth(50);
     return text;
   }
 
@@ -84,9 +88,9 @@ export default class UIManager{
       // Adds left zeros to seconds
       partInSeconds = partInSeconds.toString().padStart(2,'0');
       // Returns formated time
-      return `${minutes}:${partInSeconds}`;
+      return `Next Hero:\n${minutes}:${partInSeconds}`;
     } else {
-      return '00:00';
+      return 'Next Hero:\n00:00';
     }
   }
 }

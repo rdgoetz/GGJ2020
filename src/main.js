@@ -67,7 +67,7 @@ function preload() {
   UI.loadSpriteSheets(this);
 }
 
-var timer = 120;
+var timer = 45;
 var clock;
 
 function create() {
@@ -75,7 +75,7 @@ function create() {
     delay: 1000,
     callback: onEvent,
     callbackScope: this,
-    loop: true
+    loop: true,
   });
 
 
@@ -118,6 +118,9 @@ function update(time, delta) {
 function onEvent() {
   timer -= 1;
   UI.time = timer;
+  if (timer == 0) {
+    timer = 45;
+  }
 }
 
 })

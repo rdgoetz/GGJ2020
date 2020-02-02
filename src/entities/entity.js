@@ -5,9 +5,19 @@ export default class Entity {
     this.world = world
     this.physicsBody = null
 
-    this.tags = [];
+    this.hitPoints = 1;
+
+    this.tagSet = [];
     this.properties = properties;
     this.inventory = new Inventory();
+  }
+
+  addedToWorld() {
+    this.init();
+  }
+
+  tags(tags) {
+    this.tagSet = this.tagSet.concat(tags)
   }
 
   setProperty() {
@@ -17,14 +27,27 @@ export default class Entity {
   }
 
   hasTag(tag) {
-    return this.tags.includes(tag);
+    return this.tagSet.includes(tag);
+  }
+
+  damage(amount) {
+    this.hitPoints -= amount;
+  }
+
+  healthy() {
+    return this.hitPoints > 0;
   }
 
   collisionList() {
     return [];
   }
 
-  collidedWith(entity) {
+  handleCollision(p3, entity) {
+    this.collidedWith(p3, entity);
+    entity.collidedWith(p3, this);
+  }
+
+  collidedWith(p3, entity) {
   }
 
   collidesWith(collisionType) {

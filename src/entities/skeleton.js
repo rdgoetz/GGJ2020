@@ -3,8 +3,8 @@ import Entity from './entity.js'
 export default class Skeleton extends Entity {
   init() {
     this.speed = 100;
-    this.dieAt = 0;
-    this.lifetime = 3000;
+
+    this.tags(['skeleton']);
   }
 
   sprite() {
@@ -61,12 +61,6 @@ export default class Skeleton extends Entity {
 
     // Normalize and scale the velocity so that this.physicsBody can't move faster along a diagonal
     this.physicsBody.body.velocity.normalize().scale(this.speed);
-
-    if (this.dieAt == 0) { this.dieAt = time + this.lifetime; }
-
-    if (this.dieAt < time) {
-      this.die(p3);
-    }
   }
 
   die(p3) {

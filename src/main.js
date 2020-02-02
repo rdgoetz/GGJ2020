@@ -15,6 +15,8 @@ import SkeletonSpawn from './entities/skeletonSpawn.js'
 import Bone from './entities/bone.js'
 import Hero from './entities/hero.js'
 import Vase from './entities/vase.js'
+import Door from './entities/door.js'
+import Position from './entities/exit.js'
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -48,6 +50,8 @@ let world = new World({
   bone: Bone,
   hero: Hero,
   vase: Vase,
+  door: Door,
+  position: Position
 });
 
 var UI = new UIManager(this);

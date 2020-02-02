@@ -15,8 +15,11 @@ import SkeletonSpawn from './entities/skeletonSpawn.js'
 import Bone from './entities/bone.js'
 import Hero from './entities/hero.js'
 import Vase from './entities/vase.js'
+import BrokenVase from './entities/brokenVase.js'
 import Door from './entities/door.js'
 import Position from './entities/position.js'
+import SpikeTrap from './entities/spikeTrap.js'
+import TriggeredSpikeTrap from './entities/triggeredSpikeTrap.js'
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -25,7 +28,10 @@ const config = {
   width: 800,
   height: 600,
   parent: "game-container",
-  pixelArt: true, 
+  pixelArt: true,
+  audio: {
+    disableWebAudio: true
+  },
   physics: {
     default: "arcade",
     arcade: {
@@ -43,27 +49,34 @@ const game = new Phaser.Game(config);
 let cursors;
 let player;
 
-let world = new World({
-  player: Player,
-  skeleton: Skeleton,
-  skeletonSpawn: SkeletonSpawn,
-  bone: Bone,
-  hero: Hero,
-  vase: Vase,
-  door: Door,
-  position: Position
-});
+let world;
 
 var UI = new UIManager(this);
 let showDebug = false;
 
 function preload() {
+  world = new World(this, {
+    player: Player,
+    skeleton: Skeleton,
+    skeletonSpawn: SkeletonSpawn,
+    bone: Bone,
+    hero: Hero,
+    vase: Vase,
+    brokenVase: BrokenVase,
+    door: Door,
+    position: Position,
+    spikeTrap: SpikeTrap,
+    triggeredSpikeTrap: TriggeredSpikeTrap
+  });
+
   world.loadAssets(this);
+
   this.load.scenePlugin({
     key: 'rexuiplugin',
     url: '/js/rexuiplugin.min.js',
     sceneKey: 'rexUI'
-});
+  });
+
   UI.loadSpriteSheets(this);
 }
 
@@ -99,14 +112,14 @@ function create() {
       faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
     });
 
-    
+
   });
 
   // UI ----------------------------------------------
   UI.getWorld(world);
   hearts = UI.setHearts(this, world.player.hitPoints);
   clock = UI.setTimer(this, timer);
-  bones = UI.setBones(this);  
+  bones = UI.setBones(this);
   // END UI -------------------------------------
 }
 

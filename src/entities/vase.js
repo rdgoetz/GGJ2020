@@ -16,7 +16,7 @@ export default class Vase extends Entity {
       },
       offeset: {
         x: 7,
-        y: 7
+        y: 6
       },
       sheet: 'atlas',
       frame: 'item-0.png'
@@ -24,19 +24,15 @@ export default class Vase extends Entity {
   }
 
   collisionList() {
-    return ['player', 'hero'];
-  }
-
-  collidedWith(p3, entity) {
+    return ['player','hero','skeleton'];
   }
 
   static animations() {
     return [];
   }
 
-  update(p3, time, delta) {
-  }
-
-  unload() {
+  die(p3) {
+    let brokenVase = this.world.createEntity('brokenVase', this.properties);
+    this.world.addEntity(p3, brokenVase, this.physicsBody.x, this.physicsBody.y)
   }
 }

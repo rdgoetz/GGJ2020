@@ -5,17 +5,21 @@ export default class Player extends Entity {
     this.speed = 200;
     this.hitPoints = 3;
     this.tags(['player']);
+
+    this.hitPoints = 3;
+
+    this.physicsBody.setDepth(7);
   }
 
   sprite() {
     return {
       size: {
         w: 16,
-        h: 32
+        h: 28
       },
       offeset: {
         x: 8,
-        y: 0
+        y: 6
       },
       sheet: 'atlas',
       frame: 'Tux_Hat-0.png'
@@ -100,6 +104,19 @@ export default class Player extends Entity {
       this.physicsBody.body.setVelocityY(-this.speed);
     } else if (cursors.down.isDown) {
       this.physicsBody.body.setVelocityY(this.speed);
+    }
+
+    if (cursors.space.isDown) {
+      let target = this.acquireTarget(['brokenVase', 'triggeredSpikeTrap', 'skeletonSpawn'], 30)
+      if (target) {
+        if (target.hasTag('needsBones')) {
+          if (this.inventory.remove('bone', 3) == 3) {
+            target.kill();
+          }
+        } else {
+          target.kill();
+        }
+      }
     }
 
     // Normalize and scale the velocity so that this.physicsBody can't move faster along a diagonal

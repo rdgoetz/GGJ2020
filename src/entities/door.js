@@ -13,12 +13,12 @@ export default class Door extends Entity {
   sprite() {
     return {
       size: {
-        w: 16,
-        h: 16
+        w: 32,
+        h: 32
       },
       offeset: {
-        x: 8,
-        y: 8
+        x: 0,
+        y: 0
       },
       sheet: 'atlas',
       frame: 'Doors-2.png'
@@ -30,7 +30,7 @@ export default class Door extends Entity {
   }
 
   collisionList() {
-    return ['player', 'hero'];
+    return ['player', 'hero', 'skeleton'];
   }
 
   openDoor() {
@@ -43,11 +43,5 @@ export default class Door extends Entity {
       this.physicsBody.visible = true;
       this.physicsBody.body.setEnable(true)
     }, 500)
-  }
-
-  update(p3, time, delta) {
-  }
-
-  unload() {
   }
 }

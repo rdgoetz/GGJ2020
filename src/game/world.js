@@ -1,5 +1,5 @@
 export default class World {
-  constructor(entitySet) {
+  constructor(p3, entitySet) {
     this.player = null;
     this.entities = [];
     this.entitySet = entitySet;
@@ -8,6 +8,13 @@ export default class World {
     this.configuration = {};
 
     this.lastEntityId = 0;
+
+    this.started = false;
+
+    this.sounds = {};
+    this.music = {};
+
+    this.p3 = p3;
   }
 
   loadAssets(p3) {
@@ -26,9 +33,47 @@ export default class World {
       atlasURL: '../assets/atlas/full_atlas.json'
     });
 
+    let sounds = [
+      'Attack',
+      'Attack',
+      'Attack',
+      'Attack',
+      'Attack',
+      'Attack',
+      'Attack',
+      'Attack',
+      'Attack',
+      'Attack'
+    ];
+
+    sounds = [
+      'Attack'
+    ]
+
+    sounds.forEach((sound) => {
+      p3.load.audio(sound, '../assets/sounds/effects/'+sound+'.mp3');
+      this.sounds[sound] = null;
+    });
+
+    let music = [
+      'Music TR 3'
+    ]
+
+    music.forEach((track) => {
+      p3.load.audio(track, '../assets/sounds/music/'+track+'.mp3');
+      this.music[track] = null;
+    });
   }
 
   create(p3) {
+    Object.keys(this.sounds).forEach((sound) => {
+      this.sounds[sound] = p3.sound.add(sound);
+    });
+
+    Object.keys(this.music).forEach((track) => {
+      this.music[track] = p3.sound.add(track);
+    });
+
     this.cursors = p3.input.keyboard.createCursorKeys();
 
     Object.values(this.entitySet).forEach((entityClass) => {
@@ -51,6 +96,8 @@ export default class World {
     // want the "Above Player" layer to sit on top of the player, so we explicitly give it a depth.
     // Higher depths will sit on top of lower depth objects.
     this.aboveLayer.setDepth(10);
+    this.worldLayer.setDepth(5);
+    this.belowLayer.setDepth(1);
 
     // Object layers in Tiled let you embed extra info into a map - like a spawn point or custom
     // collision shapes. In the tmx file, there's an object layer with a point named "Spawn Point"
@@ -150,9 +197,15 @@ export default class World {
 
     collisionEntities.forEach((collisionEntity) => {
       if (collisionEntity) {
-        p3.physics.add.collider(physicsBody, collisionEntity.physicsBody, ((_entityBody, _secondBody) => {
-          entity.handleCollision(p3, collisionEntity);
-        }).bind(this));
+        if (entity.overlapOnly()) {
+          p3.physics.add.overlap(physicsBody, collisionEntity.physicsBody, ((_entityBody, _secondBody) => {
+            entity.handleOverlap(p3, collisionEntity);
+          }).bind(this));
+        } else {
+          p3.physics.add.collider(physicsBody, collisionEntity.physicsBody, ((_entityBody, _secondBody) => {
+            entity.handleCollision(p3, collisionEntity);
+          }).bind(this));
+        }
       } else {
         console.log("INVALID COLLISION TAG")
       }
@@ -174,11 +227,39 @@ export default class World {
     entityClass.animations(anims).forEach((animation) => anims.create(animation))
   }
 
+  worldReady(p3) {
+    this.playTrack('Music TR 3');
+  }
+
   update(p3, time, delta) {
-    Object.values(this.entities).forEach((entity) => entity.update(p3, time, delta))
+    if (!this.started) {
+      this.started = true;
+      this.worldReady(p3);
+    }
+
+    Object.values(this.entities).forEach((entity) => entity.worldStep(p3, time, delta))
+    Object.values(this.entities).filter((entity) => entity.markedForDeath).forEach((entity) => {
+      this.removeEntity(entity);
+    })
   }
 
   unload() {
+  }
+
+  playSound(sound) {
+    let audio = this.sounds[sound]
+
+    if (audio) {
+      audio.play();
+    }
+  }
+
+  playTrack(track) {
+    let audio = this.music[track]
+
+    if (audio) {
+      // audio.play();
+    }
   }
 }
 

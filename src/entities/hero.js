@@ -10,6 +10,10 @@ export default class Hero extends Entity {
     this.attacking = false;
 
     this.tags(['hero']);
+
+    this.hitPoints = 3;
+
+    this.physicsBody.setDepth(7);
   }
 
   sprite() {
@@ -37,7 +41,7 @@ export default class Hero extends Entity {
 
   collidedWith(p3, entity) {
     if (entity.hasTag('vase') || entity.hasTag('skeleton')) {
-      if (entity.healthy()) {
+      if (entity.healthy() && !this.attacking) {
         this.attack(entity);
         if (!entity.healthy()) {
           this.acquireNextGoal()
@@ -88,7 +92,11 @@ export default class Hero extends Entity {
       this.currentGoalEntityIndex = 0;
     }
 
-    this.goalEntity = this.currentRoomEntities[this.currentGoalEntityIndex]
+    if (this.currentRoomIndex >= this.world.configuration.room_path.path.length) {
+      this.kill();
+    } else {
+      this.goalEntity = this.currentRoomEntities[this.currentGoalEntityIndex]
+    }
   }
 
   completedRoomGoals() {
@@ -99,52 +107,46 @@ export default class Hero extends Entity {
     this.attacking = true;
     entity.damage(1);
 
+    this.world.playSound('Attack');
+
     setTimeout(() => {
       this.attacking = false;
-    }, 1500)
+    }, 450)
   }
 
   update(p3, time, delta) {
-    if (this.goalEntity == null || this.completedRoomGoals()) {
+    if (this.goalEntity == null) {
       this.acquireNextGoal();
     }
 
     this.physicsBody.body.setVelocity(0);
 
-    if (this.attacking) {
-      return;
-    }
-
-    if (this.goalEntity == null) {
-      debugger;
-    }
-
     let goalEntityBody = this.goalEntity.physicsBody;
     const prevVelocity = this.physicsBody.body.velocity.clone();
 
-    // Stop any previous movement from the last frame
+    if (!this.attacking) {
+      let offset = 20;
 
-    let offset = 20;
+      if (this.goalEntity.hasTag('door') || this.goalEntity.hasTag('location')) {
+        offset = 2;
+      }
 
-    if (this.goalEntity.hasTag('door') || this.goalEntity.hasTag('location')) {
-      offset = 2;
+      // Horizontal movement
+      if (goalEntityBody.x < this.physicsBody.x - offset) {
+        this.physicsBody.body.setVelocityX(-this.speed);
+      } else if (goalEntityBody.x > this.physicsBody.x + offset) {
+        this.physicsBody.body.setVelocityX(this.speed);
+      }
+
+      // Vertical movement
+      if (goalEntityBody.y < this.physicsBody.y - offset) {
+        this.physicsBody.body.setVelocityY(-this.speed);
+      } else if (goalEntityBody.y > this.physicsBody.y + offset) {
+        this.physicsBody.body.setVelocityY(this.speed);
+      }
+
+      // Normalize and scale the velocity so that this.physicsBody can't move faster along a diagonal
+      this.physicsBody.body.velocity.normalize().scale(this.speed);
     }
-
-    // Horizontal movement
-    if (goalEntityBody.x < this.physicsBody.x - offset) {
-      this.physicsBody.body.setVelocityX(-this.speed);
-    } else if (goalEntityBody.x > this.physicsBody.x + offset) {
-      this.physicsBody.body.setVelocityX(this.speed);
-    }
-
-    // Vertical movement
-    if (goalEntityBody.y < this.physicsBody.y - offset) {
-      this.physicsBody.body.setVelocityY(-this.speed);
-    } else if (goalEntityBody.y > this.physicsBody.y + offset) {
-      this.physicsBody.body.setVelocityY(this.speed);
-    }
-
-    // Normalize and scale the velocity so that this.physicsBody can't move faster along a diagonal
-    this.physicsBody.body.velocity.normalize().scale(this.speed);
   }
 }

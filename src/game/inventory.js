@@ -19,12 +19,11 @@ export default class Inventory {
     let numberRemoved = 0;
 
     if (this.items[itemType]) {
-      if (this.items[itemType] > numRemoved) {
+      if (this.items[itemType] > numberRemoved) {
         this.items[itemType] -= amount;
         numberRemoved = amount;
       } else {
-        numberRemoved = this.items[itemType]
-        this.items[itemType] = 0;
+        numberRemoved = 0
       }
     }
 

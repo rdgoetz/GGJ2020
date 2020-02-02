@@ -15,7 +15,7 @@ export default class Skeleton extends Entity {
     this.tags(['skeleton', 'enemy']);
 
     this.acquireRange = 150;
-    this.leashRange = 300;
+    this.leashRange = 200;
 
     this.physicsBody.setDepth(7);
   }
@@ -87,6 +87,8 @@ export default class Skeleton extends Entity {
       this.target = null
     }
 
+    this.physicsBody.body.setVelocity(0);
+
     if (this.ready && this.target) {
       let playerBody = this.target.physicsBody;
       const prevVelocity = this.physicsBody.body.velocity.clone();
@@ -109,16 +111,11 @@ export default class Skeleton extends Entity {
 
       // Normalize and scale the velocity so that this.physicsBody can't move faster along a diagonal
       this.physicsBody.body.velocity.normalize().scale(this.speed);
-    } else {
-      this.physicsBody.body.setVelocity(0);
     }
   }
 
   die(p3) {
     let skeletonSpawn = this.world.createEntity('skeletonSpawn', this.properties);
     this.world.addEntity(p3, skeletonSpawn, this.physicsBody.x, this.physicsBody.y)
-
-    for(var i = 0; i<3; i++) {
-    }
   }
 }

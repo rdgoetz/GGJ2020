@@ -5,7 +5,9 @@ export default class SkeletonSpawn extends Entity {
     this.physicsBody.body.setVelocity(0);
     this.physicsBody.body.setImmovable(true);
 
-    this.tags(['skeletonSpawn', 'needsBones']);
+    this.physicsBody.body.setEnable(false)
+
+    this.tags(['skeletonSpawn', 'needsBones', 'broken']);
   }
 
   sprite() {
@@ -22,11 +24,6 @@ export default class SkeletonSpawn extends Entity {
       frame: 'sword_skeleton-5.png'
     }
   }
-
-  collisionList() {
-    return ['player'];
-  }
-
 
   static animations() {
     return [];

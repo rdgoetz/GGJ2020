@@ -20,6 +20,7 @@ import Door from './entities/door.js'
 import Position from './entities/position.js'
 import SpikeTrap from './entities/spikeTrap.js'
 import TriggeredSpikeTrap from './entities/triggeredSpikeTrap.js'
+import FixCloud from './entities/fixCloud.js'
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -66,7 +67,8 @@ function preload() {
     door: Door,
     position: Position,
     spikeTrap: SpikeTrap,
-    triggeredSpikeTrap: TriggeredSpikeTrap
+    triggeredSpikeTrap: TriggeredSpikeTrap,
+    fixCloud: FixCloud
   });
 
   world.loadAssets(this);
@@ -80,18 +82,10 @@ function preload() {
   UI.loadSpriteSheets(this);
 }
 
-var timer = 45;
+var timer;
 var clock;
 
 function create() {
-  var timedEvent = this.time.addEvent({
-    delay: 1000,
-    callback: onEvent,
-    callbackScope: this,
-    loop: true,
-  });
-
-
   world.create(this)
 
   cursors = this.input.keyboard.createCursorKeys();
@@ -106,33 +100,45 @@ function create() {
       .graphics()
       .setAlpha(0.75)
       .setDepth(20);
-    worldLayer.renderDebug(graphics, {
+    world.worldLayer.renderDebug(graphics, {
       tileColor: null, // Color of non-colliding tiles
       collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
       faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
     });
-
-
   });
 
-  // UI ----------------------------------------------
-  UI.getWorld(world);
-  hearts = UI.setHearts(this, world.player.hitPoints);
-  clock = UI.setTimer(this, timer);
-  bones = UI.setBones(this);
-  // END UI -------------------------------------
+  world.onReady((readyWorld) => {
+    // UI ----------------------------------------------
+    timer = readyWorld.heroTime;
+
+    UI.setWorld(readyWorld);
+    hearts = UI.setHearts(this, readyWorld.player.hitPoints);
+    clock = UI.setTimer(this, timer);
+    bones = UI.setBones(this);
+
+    var timedEvent = this.time.addEvent({
+      delay: 1000,
+      callback: onEvent,
+      callbackScope: this,
+      loop: true,
+    });
+    // END UI -------------------------------------
+  })
 }
 
 function update(time, delta) {
   world.update(this, time, delta);
-  UI.update(hearts, clock, bones);
+  if (UI.world) {
+    UI.update(hearts, clock, bones);
+  }
 }
 
 function onEvent() {
   timer -= 1;
   UI.time = timer;
-  if (timer == 0) {
-    timer = 45;
+  if (timer <= 0) {
+    world.newHero();
+    timer = world.heroTime;
   }
 }
 

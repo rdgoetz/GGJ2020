@@ -2,7 +2,7 @@ import Entity from './entity.js'
 
 export default class Position extends Entity {
   init() {
-    this.tags(['location']);
+    this.tags(['location', 'position']);
 
     this.physicsBody.visible = false;
 

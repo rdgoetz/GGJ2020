@@ -6,7 +6,7 @@ export default class UIManager{
     this.statusBar = new StatusBar();
     this.statusBarTextStyle  = {
       fontFamily: 'Courier',
-      fontSize: '28px', 
+      fontSize: '28px',
       fill: '#fff',
       strokeThickness: 1,
       stroke: '#c9c9c9'
@@ -14,7 +14,7 @@ export default class UIManager{
   }
 
 
-  getWorld(world) {
+  setWorld(world) {
     this.world = world
   }
 
@@ -50,6 +50,7 @@ export default class UIManager{
       const sprite = game.add.sprite(50 + (50 * i), 575, "pot-items")
         .setScrollFactor(0)
         .setScale(2)
+        .setDepth(50)
         .setFrame(0);
       hearts[i] = sprite;
     }
@@ -60,27 +61,32 @@ export default class UIManager{
   setTimer(game, time) {
     var text = game.add
                   .text(400, 560, this.formatTime(time), this.statusBarTextStyle)
+                  .setDepth(50)
                   .setScrollFactor(0);
     return text;
   }
 
   setBones(game) {
-    var text = game.add 
+    var text = game.add
                   .text(700, 560, "0x", this.statusBarTextStyle)
+                  .setDepth(50)
                   .setScrollFactor(0);
     game.add.image(755, 575, 'bone').setScrollFactor(0).setScale(1.6);
     return text;
   }
 
   formatTime(seconds){
-    // Minutes
-    var minutes = Math.floor(seconds/60);
-    // Seconds
-    var partInSeconds = seconds%60;
-    // Adds left zeros to seconds
-    partInSeconds = partInSeconds.toString().padStart(2,'0');
-    // Returns formated time
-    return `${minutes}:${partInSeconds}`;
-}
-
+    if (seconds) {
+      // Minutes
+      var minutes = Math.floor(seconds/60);
+      // Seconds
+      var partInSeconds = seconds%60;
+      // Adds left zeros to seconds
+      partInSeconds = partInSeconds.toString().padStart(2,'0');
+      // Returns formated time
+      return `${minutes}:${partInSeconds}`;
+    } else {
+      return '00:00';
+    }
+  }
 }

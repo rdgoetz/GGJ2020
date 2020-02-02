@@ -5,7 +5,7 @@ export default class TriggeredSpikeTrap extends Entity {
     this.physicsBody.body.setVelocity(0);
     this.physicsBody.body.setImmovable(true);
 
-    this.tags(['trap', 'triggeredSpikeTrap']);
+    this.tags(['trap', 'triggeredSpikeTrap','broken']);
   }
 
   sprite() {

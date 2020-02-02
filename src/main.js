@@ -4,7 +4,10 @@
  *  - Tuxemon, https://github.com/Tuxemon/Tuxemon
  */
 import UIManager from './ui/uiManager.js';
-import Timer from './ui/statusBar/timer.js';
+const hearts = [];
+var timer;
+var bones;
+var coins;
 
 import World from './game/world.js'
 import Player from './entities/player.js'
@@ -21,10 +24,7 @@ const config = {
   width: 800,
   height: 600,
   parent: "game-container",
-  pixelArt: true,
-  dom: {
-    createContainer: true
-  },
+  pixelArt: true, 
   physics: {
     default: "arcade",
     arcade: {
@@ -51,7 +51,7 @@ let world = new World({
   vase: Vase,
 });
 
-var UI = new UIManager();
+var UI = new UIManager(this);
 let showDebug = false;
 
 function preload() {
@@ -91,19 +91,19 @@ function create() {
   });
 
   // UI ----------------------------------------------
-
     for (var i = 0; i < UI.statusBar.display.life; i++) {
       const sprite = this.add.sprite(50 + (50 * i), 575, "heart").setScrollFactor(0).setScale(2);
+      hearts[i] = sprite;
     }
-    const timer = this.add.text(400, 575, UI.statusBar.display.timer).setScrollFactor(0);
-    const bones = this.add.text(600, 575, UI.statusBar.display.bones).setScrollFactor(0);
-    const coins = this.add.text(700, 575, UI.statusBar.display.coins).setScrollFactor(0);
+    timer = this.add.text(400, 575, UI.statusBar.display.timer).setScrollFactor(0);
+    bones = this.add.text(600, 575, UI.statusBar.display.bones).setScrollFactor(0);
+    coins = this.add.text(700, 575, UI.statusBar.display.coins).setScrollFactor(0);
   // END UI -------------------------------------
 }
 
 function update(time, delta) {
   world.update(this, time, delta)
-  UI.update
+  UI.update(hearts, timer, bones, coins);
 }
 
 })

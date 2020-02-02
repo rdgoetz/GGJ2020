@@ -7,7 +7,7 @@ export default class BrokenVase extends Entity {
 
     this.physicsBody.body.setEnable(false)
 
-    this.tags(['brokenVase']);
+    this.tags(['brokenVase','broken']);
   }
 
   sprite() {

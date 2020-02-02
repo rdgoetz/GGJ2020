@@ -109,12 +109,20 @@ export default class Player extends Entity {
     if (cursors.space.isDown) {
       let target = this.acquireTarget(['brokenVase', 'triggeredSpikeTrap', 'skeletonSpawn'], 30)
       if (target) {
+        let killTarget = false;
+
         if (target.hasTag('needsBones')) {
           if (this.inventory.remove('bone', 3) == 3) {
-            target.kill();
+            killTarget = true
           }
         } else {
+          killTarget = true
+        }
+
+        if (killTarget) {
           target.kill();
+          let fixCloud = this.world.createEntity('fixCloud', {});
+          this.world.addEntity(p3, fixCloud, target.physicsBody.x, target.physicsBody.y)
         }
       }
     }

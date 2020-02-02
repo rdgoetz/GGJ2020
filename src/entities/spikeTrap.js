@@ -52,6 +52,8 @@ export default class SpikeTrap extends Entity {
   }
 
   die(p3) {
+    this.world.playSound('Trap 3');
+
     this.properties.overlapOnly = false;
     let triggeredSpikeTrap = this.world.createEntity('triggeredSpikeTrap', this.properties);
     this.world.addEntity(p3, triggeredSpikeTrap, this.physicsBody.x, this.physicsBody.y)

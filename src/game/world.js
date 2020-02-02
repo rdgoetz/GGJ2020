@@ -15,6 +15,37 @@ export default class World {
     this.music = {};
 
     this.p3 = p3;
+
+    this.heroTime = null;
+    this.heroesSpawned = 1;
+
+    this.readyCallbacks = [];
+
+    this.rooms = {};
+  }
+
+  onReady(callback) {
+    this.readyCallbacks.push(callback);
+  }
+
+  win() {
+    alert('You Win!');
+  }
+
+  lose() {
+    alert('You Lose');
+  }
+
+  newHero() {
+    this.heroTime -= this.configuration.heroRules.heroTimerDecrease;
+    this.heroesSpawned++;
+
+    if (this.heroesSpawned > this.configuration.heroRules.totalHeroes) {
+      this.win();
+    } else {
+      let hero = this.createEntity('hero', {type: 'hero'});
+      this.addEntity(this.p3, hero, this.configuration.hero_spawn.x, this.configuration.hero_spawn.y)
+    }
   }
 
   loadAssets(p3) {
@@ -35,20 +66,10 @@ export default class World {
 
     let sounds = [
       'Attack',
-      'Attack',
-      'Attack',
-      'Attack',
-      'Attack',
-      'Attack',
-      'Attack',
-      'Attack',
-      'Attack',
-      'Attack'
+      'Trap 3',
+      'Bones Down',
+      'Bones Up'
     ];
-
-    sounds = [
-      'Attack'
-    ]
 
     sounds.forEach((sound) => {
       p3.load.audio(sound, '../assets/sounds/effects/'+sound+'.mp3');
@@ -56,7 +77,7 @@ export default class World {
     });
 
     let music = [
-      'Music TR 3'
+      //'Music TR 3'
     ]
 
     music.forEach((track) => {
@@ -99,6 +120,19 @@ export default class World {
     this.worldLayer.setDepth(5);
     this.belowLayer.setDepth(1);
 
+    map.getObjectLayer('Objects').objects.forEach((object) => {
+      if (object.properties && object.type == 'room') {
+        let properties = {}
+
+        object.properties.forEach((property) => {
+          properties[property.name] = property.value;
+        });
+
+        this.rooms[properties.name] = object;
+        this.rooms[properties.name].entities = {};
+      }
+    })
+
     // Object layers in Tiled let you embed extra info into a map - like a spawn point or custom
     // collision shapes. In the tmx file, there's an object layer with a point named "Spawn Point"
     map.getObjectLayer('Objects').objects.forEach((object) => {
@@ -108,7 +142,6 @@ export default class World {
         object.properties.forEach((property) => {
           properties[property.name] = property.value;
         });
-
 
         let type = object.properties.find((property) => property.name === 'type');
 
@@ -163,7 +196,9 @@ export default class World {
     let EntityClass = this.entitySet[type]
 
     if (EntityClass) {
-      return new EntityClass(this, properties);
+      let entity = new EntityClass(this, properties);
+
+      return entity;
     }
 
     throw 'Invalid Entity Type';
@@ -172,6 +207,10 @@ export default class World {
   removeEntity(entity) {
     entity.unload();
     entity.physicsBody.destroy();
+
+    if (entity.properties.room_id) {
+      delete this.rooms[entity.properties.room_id].entities[entity.id];
+    }
     delete this.entities[entity.id];
   }
 
@@ -211,6 +250,10 @@ export default class World {
       }
     });
 
+    if (entity.properties.room_id) {
+      this.rooms[entity.properties.room_id].entities[entity.id] = entity;
+    }
+
     entity.addedToWorld();
 
     return physicsBody;
@@ -228,7 +271,10 @@ export default class World {
   }
 
   worldReady(p3) {
+    this.heroTime = this.configuration.heroRules.baseHeroTimer;
     this.playTrack('Music TR 3');
+
+    this.readyCallbacks.forEach((callback) => callback(this));
   }
 
   update(p3, time, delta) {

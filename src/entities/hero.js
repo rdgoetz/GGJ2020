@@ -44,6 +44,7 @@ export default class Hero extends Entity {
       if (entity.healthy() && !this.attacking) {
         this.attack(entity);
         if (!entity.healthy()) {
+          delete this.currentRoomEntities[entity.id];
           this.acquireNextGoal()
         }
       }
@@ -54,6 +55,7 @@ export default class Hero extends Entity {
     }
 
     if (entity.hasTag('location') && entity.id == this.goalEntity.id) {
+      delete this.currentRoomEntities[entity.id];
       this.acquireNextGoal()
     }
   }
@@ -71,9 +73,10 @@ export default class Hero extends Entity {
       this.currentRoomIndex++;
     }
 
-    this.currentGoalEntityIndex = null;
-    this.currentRoom = this.world.configuration.room_path.path[this.currentRoomIndex];
-    this.currentRoomEntities = this.roomEntities(this.currentRoom);
+    this.currentRoomName = this.world.configuration.room_path.path[this.currentRoomIndex];
+    this.currentRoom = this.world.rooms[this.currentRoomName];
+
+    this.currentRoomEntities = Object.assign({}, this.currentRoom.entities);
   }
 
   acquireNextGoal() {
@@ -81,26 +84,38 @@ export default class Hero extends Entity {
       this.acquireNextRoom();
     }
 
-    if (this.currentGoalEntityIndex == null) {
-      this.currentGoalEntityIndex = 0;
-    } else {
-      this.currentGoalEntityIndex++;
-    }
-
     if (this.completedRoomGoals()) {
       this.acquireNextRoom();
-      this.currentGoalEntityIndex = 0;
     }
 
     if (this.currentRoomIndex >= this.world.configuration.room_path.path.length) {
       this.kill();
     } else {
-      this.goalEntity = this.currentRoomEntities[this.currentGoalEntityIndex]
+      let positions = Object.values(this.currentRoomEntities).filter((entity) => entity.hasTag('position') && !entity.properties.exit)
+
+      if (positions.length > 0) {
+        this.goalEntity = positions[0]
+      } else {
+        let enemies = Object.values(this.currentRoomEntities).filter((entity) => entity.hasTag('enemy'))
+
+        if (enemies.length > 0) {
+          this.goalEntity = enemies[0]
+        } else {
+          let entities = Object.values(this.currentRoomEntities).filter((entity) => !entity.properties.exit)
+
+          if (entities.length > 0) {
+            this.goalEntity = entities[0];
+          } else {
+            let exits = Object.values(this.currentRoomEntities).filter((entity) => entity.properties.exit)
+            this.goalEntity = exits[0];
+          }
+        }
+      }
     }
   }
 
   completedRoomGoals() {
-    return this.currentGoalEntityIndex >= this.world.configuration.room_path.room_goals[this.currentRoom];
+    return Object.values(this.currentRoomEntities).length <= 0;
   }
 
   attack(entity) {
@@ -123,6 +138,10 @@ export default class Hero extends Entity {
 
     let goalEntityBody = this.goalEntity.physicsBody;
     const prevVelocity = this.physicsBody.body.velocity.clone();
+
+    if (this.goalEntity && this.goalEntity.hasTag('broken')) {
+      this.world.lose();
+    }
 
     if (!this.attacking) {
       let offset = 20;

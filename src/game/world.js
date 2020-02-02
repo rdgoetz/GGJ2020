@@ -80,6 +80,11 @@ export default class World {
         .text(170, 350, reason, reasonStyle)
         .setDepth(50)
         .setScrollFactor(0);
+
+    var text = this.p3.add
+                  .text(250, 250, 'Game Over', style)
+                  .setDepth(50)
+                  .setScrollFactor(0);
   }
 
   newHero() {

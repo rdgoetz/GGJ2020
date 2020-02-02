@@ -67,7 +67,18 @@ function preload() {
   UI.loadSpriteSheets(this);
 }
 
+var timer = 120;
+var clock;
+
 function create() {
+  var timedEvent = this.time.addEvent({
+    delay: 1000,
+    callback: onEvent,
+    callbackScope: this,
+    loop: true
+  });
+
+
   world.create(this)
 
   cursors = this.input.keyboard.createCursorKeys();
@@ -94,14 +105,19 @@ function create() {
   // UI ----------------------------------------------
   UI.getWorld(world);
   hearts = UI.setHearts(this, world.player.hitPoints);
-  timer = UI.setTimer(this);
+  clock = UI.setTimer(this, timer);
   bones = UI.setBones(this);  
   // END UI -------------------------------------
 }
 
 function update(time, delta) {
   world.update(this, time, delta);
-  UI.update(hearts, timer, bones);
+  UI.update(hearts, clock, bones);
+}
+
+function onEvent() {
+  timer -= 1;
+  UI.time = timer;
 }
 
 })

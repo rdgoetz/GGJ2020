@@ -123,7 +123,11 @@ function create() {
       loop: true,
     });
     // END UI -------------------------------------
+
   })
+
+  var camera = this.cameras.main;
+  camera.setZoom(1.25);
 }
 
 function update(time, delta) {

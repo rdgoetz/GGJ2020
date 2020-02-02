@@ -8,6 +8,8 @@ export default class Bone extends Entity {
     this.physicsBody.body.setAcceleration(0,0);
 
     this.physicsBody.body.setVelocity(100*Math.random() - 50, 100*Math.random() - 50);
+
+    this.tags(['bone']);
   }
 
   sprite() {
@@ -41,7 +43,6 @@ export default class Bone extends Entity {
   }
 
   update(p3, time, delta) {
-    console.log('update');
   }
 
   unload() {

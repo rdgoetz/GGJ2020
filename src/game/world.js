@@ -146,16 +146,27 @@ export default class World {
 
     p3.physics.add.collider(physicsBody, this.worldLayer);
 
-    if (entity.collidesWith('player') && this.player) {
-      p3.physics.add.collider(physicsBody, this.player.physicsBody, ((entityBody, playerBody) => {
-        entity.collidedWith(p3, this.player);
-        this.player.collidedWith(p3, entity);
-      }).bind(this));
-    }
+    let collisionEntities = this.taggedEntities(entity.collisionList());
 
-    entity.init();
+    collisionEntities.forEach((collisionEntity) => {
+      if (collisionEntity) {
+        p3.physics.add.collider(physicsBody, collisionEntity.physicsBody, ((_entityBody, _secondBody) => {
+          entity.handleCollision(p3, collisionEntity);
+        }).bind(this));
+      } else {
+        console.log("INVALID COLLISION TAG")
+      }
+    });
+
+    entity.addedToWorld();
 
     return physicsBody;
+  }
+
+  taggedEntities(tags) {
+    return this.entities.filter((entity) => {
+      return tags.filter((tag) => entity.hasTag(tag)).length > 0;
+    });
   }
 
   addEntityAnimations(p3, entityClass) {

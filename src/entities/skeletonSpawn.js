@@ -8,6 +8,8 @@ export default class SkeletonSpawn extends Entity {
 
     this.physicsBody.body.setVelocity(0);
     this.physicsBody.body.setImmovable(true);
+
+    this.tags(['skeletonSpawn']);
   }
 
   sprite() {

@@ -1,42 +1,35 @@
 import Entity from './entity.js'
 
-export default class Vase extends Entity {
+export default class Position extends Entity {
   init() {
+    this.tags(['location']);
+
+    this.physicsBody.visible = false;
+
     this.physicsBody.body.setVelocity(0);
     this.physicsBody.body.setImmovable(true);
-
-    this.tags(['vase']);
   }
 
   sprite() {
     return {
       size: {
-        w: 18,
-        h: 20
+        w: 16,
+        h: 16
       },
       offeset: {
-        x: 7,
-        y: 7
+        x: 8,
+        y: 8
       },
       sheet: 'atlas',
-      frame: 'item-0.png'
+      frame: 'item-3.png'
     }
-  }
-
-  collisionList() {
-    return ['player', 'hero'];
-  }
-
-  collidedWith(p3, entity) {
   }
 
   static animations() {
     return [];
   }
 
-  update(p3, time, delta) {
-  }
-
-  unload() {
+  collisionList() {
+    return ['hero'];
   }
 }

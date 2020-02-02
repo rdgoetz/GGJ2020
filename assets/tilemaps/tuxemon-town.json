@@ -113,8 +113,8 @@
                  "type":"entity",
                  "visible":true,
                  "width":0,
-                 "x":806.631738088604,
-                 "y":670.102703259961
+                 "x":806.632,
+                 "y":670.103
                 }, 
                 {
                  "height":0,
@@ -136,7 +136,7 @@
                  "type":"entity",
                  "visible":true,
                  "width":0,
-                 "x":720.256552242965,
+                 "x":720.257,
                  "y":911.117
                 }, 
                 {
@@ -146,17 +146,17 @@
                  "point":true,
                  "properties":[
                         {
-                         "name":"key",
+                         "name":"room_id",
                          "type":"string",
-                         "value":"exit"
+                         "value":"finish"
                         }, 
                         {
-                         "name":"usePosition",
-                         "type":"bool",
-                         "value":true
+                         "name":"type",
+                         "type":"string",
+                         "value":"position"
                         }],
                  "rotation":0,
-                 "type":"config",
+                 "type":"entity",
                  "visible":true,
                  "width":0,
                  "x":816.383,
@@ -182,8 +182,8 @@
                  "type":"entity",
                  "visible":true,
                  "width":0,
-                 "x":540.540540540541,
-                 "y":550.292560601839
+                 "x":540.541,
+                 "y":550.293
                 }, 
                 {
                  "height":0,
@@ -205,8 +205,8 @@
                  "type":"entity",
                  "visible":true,
                  "width":0,
-                 "x":590.693786570075,
-                 "y":911.11730286988
+                 "x":590.694,
+                 "y":911.117
                 }, 
                 {
                  "height":0,
@@ -215,21 +215,6 @@
                  "point":true,
                  "properties":[
                         {
-                         "name":"combat_goals",
-                         "type":"string",
-                         "value":"[1,2]"
-                        }, 
-                        {
-                         "name":"entry_goals",
-                         "type":"string",
-                         "value":"[2]"
-                        }, 
-                        {
-                         "name":"finish_goals",
-                         "type":"string",
-                         "value":"[1]"
-                        }, 
-                        {
                          "name":"key",
                          "type":"string",
                          "value":"room_path"
@@ -237,14 +222,88 @@
                         {
                          "name":"path",
                          "type":"string",
-                         "value":"[\"entry\",\"combat\",\"finish\"]"
+                         "value":"[\"entry\",\"door_1\",\"combat\",\"door_2\",\"finish\"]"
+                        }, 
+                        {
+                         "name":"room_goals",
+                         "type":"string",
+                         "value":"{\n\"entry\":2,\n\"door_1\":2,\n\"combat\":2,\n\"door_2\":1,\n\"finish\":1\n}"
                         }],
                  "rotation":0,
                  "type":"config",
                  "visible":true,
                  "width":0,
-                 "x":458.344942881025,
-                 "y":1040.67985511284
+                 "x":458.345,
+                 "y":1040.68
+                }, 
+                {
+                 "height":0,
+                 "id":292,
+                 "name":"Door",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"room_id",
+                         "type":"string",
+                         "value":"door_2"
+                        }, 
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"door"
+                        }],
+                 "rotation":0,
+                 "type":"entity",
+                 "visible":true,
+                 "width":0,
+                 "x":656,
+                 "y":432
+                }, 
+                {
+                 "height":0,
+                 "id":293,
+                 "name":"Door",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"room_id",
+                         "type":"string",
+                         "value":"door_1"
+                        }, 
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"door"
+                        }],
+                 "rotation":0,
+                 "type":"entity",
+                 "visible":true,
+                 "width":0,
+                 "x":656,
+                 "y":814
+                }, 
+                {
+                 "height":0,
+                 "id":294,
+                 "name":"Path Positon",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"room_id",
+                         "type":"string",
+                         "value":"door_1"
+                        }, 
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"position"
+                        }],
+                 "rotation":0,
+                 "type":"entity",
+                 "visible":true,
+                 "width":0,
+                 "x":657.348766106137,
+                 "y":677.003712601005
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -253,7 +312,7 @@
          "y":0
         }],
  "nextlayerid":5,
- "nextobjectid":292,
+ "nextobjectid":295,
  "orientation":"orthogonal",
  "properties":[
         {

@@ -3,7 +3,7 @@ import Entity from './entity.js'
 export default class Player extends Entity {
   init() {
     this.speed = 200;
-    this.tags = ['player']
+    this.tags(['player']);
   }
 
   sprite() {
@@ -72,7 +72,12 @@ export default class Player extends Entity {
     ]
   }
 
-  load() {
+  collidedWith(p3, entity) {
+    if (entity.hasTag('door')) {
+      if (!entity.open) {
+        entity.openDoor()
+      }
+    }
   }
 
   update(p3, time, delta) {

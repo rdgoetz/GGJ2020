@@ -1,14 +1,20 @@
 import StatusBar from "./statusBar/statusBar.js"
-
+var world;
 export default class UIManager{
-  constructor() {
+  constructor(game, world) {
     this.statusBar = new StatusBar();
-
-    this.uiPanels = {
-      statusBar: '/src/ui/statusBar/statusBar.html'
+    this.statusBarTextStyle  = {
+      fontFamily: 'Courier',
+      fontSize: '28px', 
+      fill: '#fff',
+      strokeThickness: 1,
+      stroke: '#c9c9c9'
     }
-  
-    this.timer = this.statusBar.display.timer;
+  }
+
+
+  getWorld(world) {
+    this.world = world
   }
 
   update(hearts, timer, bones) {
@@ -18,7 +24,14 @@ export default class UIManager{
     }
 
     timer.setText(this.statusBar.display.timer);
-    bones.setText(this.statusBar.display.bones);
+    var boneCount = this.world.player.inventory.items['bone'];
+    if (boneCount == undefined) {
+      bones.setText( "0x");
+    }
+    else {
+      bones.setText( boneCount + "x");
+    }
+
     //coins.setText(this.statusBar.display.coins);
   }
 
@@ -29,12 +42,6 @@ export default class UIManager{
       }
     );
     game.load.image('bone', '/assets/images/Bone.png');
-  }
-
-  statusBarTextStyle  = {
-    fontSize: '28px', 
-    fill: '#fff',
-    strokeThickness: 1.5,
   }
 
   setHearts(game) {
@@ -64,4 +71,5 @@ export default class UIManager{
     game.add.image(755, 575, 'bone').setScrollFactor(0).setScale(1.6);
     return text;
   }
+
 }

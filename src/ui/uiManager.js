@@ -1,9 +1,13 @@
-export default class UIManager{
-  state = {
-    statusBar: true,
-  }
+import StatusBar from "./statusBar/statusBar.js"
 
-  uiPanels = {
-    statusBar: '/src/ui/statusBar/statusBar.html'
+export default class UIManager{
+  constructor() {
+    this.statusBar = new StatusBar();
+
+    this.uiPanels = {
+      statusBar: '/src/ui/statusBar/statusBar.html'
+    }
+  
+    this.timer = this.statusBar.display.timer;
   }
 }

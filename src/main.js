@@ -4,6 +4,7 @@
  *  - Tuxemon, https://github.com/Tuxemon/Tuxemon
  */
 import UIManager from './ui/uiManager.js';
+import Timer from './ui/statusBar/timer.js';
 document.addEventListener("DOMContentLoaded", function(event) {
 
 const config = {
@@ -48,7 +49,16 @@ let showDebug = false;
 
 function preload() {
   world.loadAssets(this);
-  this.load.html('status', UI.uiPanels.statusBar)
+  this.load.scenePlugin({
+    key: 'rexuiplugin',
+    url: '/js/rexuiplugin.min.js',
+    sceneKey: 'rexUI'
+});
+  this.load.spritesheet('heart', '/assets/images/Pot Items.png', {
+    frameWidth: 16, 
+    frameHeight: 16, 
+    }
+  )
 }
 
 function create() {
@@ -75,13 +85,18 @@ function create() {
 
   // UI ----------------------------------------------
   
-  this.add.dom(400, 550).createFromCache('status')
-    .setScrollFactor(0);
+    for (var i = 0; i < UI.statusBar.display.life; i++) {
+      const sprite = this.add.sprite(50 + (50 * i), 575, "heart").setScrollFactor(0).setScale(2);
+    }
+    const timer = this.add.text(400, 575, UI.statusBar.display.timer).setScrollFactor(0);
+    const bones = this.add.text(600, 575, UI.statusBar.display.bones).setScrollFactor(0);
+    const coins = this.add.text(700, 575, UI.statusBar.display.coins).setScrollFactor(0);
   // END UI -------------------------------------
 }
 
 function update(time, delta) {
   world.update(this, time, delta)
+  UI.update
 }
 
 })

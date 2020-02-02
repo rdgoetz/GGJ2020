@@ -87,9 +87,12 @@ function create() {
       collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
       faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
     });
+
+    
   });
 
   // UI ----------------------------------------------
+  UI.getWorld(world);
   hearts = UI.setHearts(this);
   timer = UI.setTimer(this);
   bones = UI.setBones(this);  
@@ -97,7 +100,7 @@ function create() {
 }
 
 function update(time, delta) {
-  world.update(this, time, delta)
+  world.update(this, time, delta);
   UI.update(hearts, timer, bones);
 }
 

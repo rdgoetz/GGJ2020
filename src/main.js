@@ -93,7 +93,7 @@ function create() {
 
   // UI ----------------------------------------------
   UI.getWorld(world);
-  hearts = UI.setHearts(this);
+  hearts = UI.setHearts(this, world.player.hitPoints);
   timer = UI.setTimer(this);
   bones = UI.setBones(this);  
   // END UI -------------------------------------

@@ -19,7 +19,7 @@ export default class UIManager{
 
   update(hearts, timer, bones) {
     hearts.forEach(sprite => sprite.visible = false);
-    for (var i = 0; i < this.statusBar.display.life; i++) {
+    for (var i = 0; i < this.world.player.hitPoints; i++) {
       hearts[i].visible = true;
     }
 
@@ -44,9 +44,9 @@ export default class UIManager{
     game.load.image('bone', '/assets/images/Bone.png');
   }
 
-  setHearts(game) {
+  setHearts(game, hitPoints) {
     var hearts = []
-    for (var i = 0; i < this.statusBar.display.life; i++) {
+    for (var i = 0; i < hitPoints; i++) {
       const sprite = game.add.sprite(50 + (50 * i), 575, "pot-items")
         .setScrollFactor(0)
         .setScale(2)

@@ -21,7 +21,7 @@ export default class Door extends Entity {
         y: 8
       },
       sheet: 'atlas',
-      frame: 'item-3.png'
+      frame: 'Doors-2.png'
     }
   }
 
@@ -42,7 +42,7 @@ export default class Door extends Entity {
       this.open = false;
       this.physicsBody.visible = true;
       this.physicsBody.body.setEnable(true)
-    }, 2500)
+    }, 500)
   }
 
   update(p3, time, delta) {

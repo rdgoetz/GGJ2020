@@ -199,6 +199,10 @@
             <key type="filename">sprites/Bone-0.png</key>
             <key type="filename">sprites/Cloud-0.png</key>
             <key type="filename">sprites/Cloud-1.png</key>
+            <key type="filename">sprites/Doors-0.png</key>
+            <key type="filename">sprites/Doors-1.png</key>
+            <key type="filename">sprites/Doors-2.png</key>
+            <key type="filename">sprites/Doors-3.png</key>
             <key type="filename">sprites/Hero-0.png</key>
             <key type="filename">sprites/Hero-1.png</key>
             <key type="filename">sprites/Hero-2.png</key>
@@ -326,6 +330,10 @@
             <filename>sprites/sword_skeleton-6.png</filename>
             <filename>sprites/sword_skeleton-7.png</filename>
             <filename>sprites/sword_skeleton-8.png</filename>
+            <filename>sprites/Doors-0.png</filename>
+            <filename>sprites/Doors-1.png</filename>
+            <filename>sprites/Doors-2.png</filename>
+            <filename>sprites/Doors-3.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

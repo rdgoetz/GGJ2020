@@ -14,7 +14,7 @@ import Bone from './entities/bone.js'
 import Hero from './entities/hero.js'
 import Vase from './entities/vase.js'
 import Door from './entities/door.js'
-import Position from './entities/exit.js'
+import Position from './entities/position.js'
 
 document.addEventListener("DOMContentLoaded", function(event) {
 

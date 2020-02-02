@@ -45,11 +45,8 @@ export default class Hero extends Entity {
       }
     }
 
-    if (entity.hasTag('door')) {
-      if (entity.id == this.goalEntity.id) {
-        entity.openDoor()
-        this.acquireNextGoal()
-      }
+    if (entity.hasTag('door') && !entity.open) {
+      entity.openDoor()
     }
 
     if (entity.hasTag('location') && entity.id == this.goalEntity.id) {
@@ -129,7 +126,7 @@ export default class Hero extends Entity {
 
     let offset = 20;
 
-    if (this.goalEntity.hasTag('door')) {
+    if (this.goalEntity.hasTag('door') || this.goalEntity.hasTag('location')) {
       offset = 2;
     }
 

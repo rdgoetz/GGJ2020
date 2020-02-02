@@ -5,6 +5,7 @@ export default class Hero extends Entity {
     this.speed = 100;
     this.currentRoomIndex = null;
     this.currentRoom = null;
+    this.currentRoomName = null;
     this.goalEntity = null;
 
     this.attacking = false;
@@ -14,6 +15,8 @@ export default class Hero extends Entity {
     this.hitPoints = 3;
 
     this.physicsBody.setDepth(7);
+
+    this.physicsBody.body.setVelocity(0);
   }
 
   sprite() {
@@ -36,7 +39,7 @@ export default class Hero extends Entity {
   }
 
   collisionList() {
-    return ['player', 'vase', 'skeleton', 'skeletonSpawn'];
+    return ['player', 'vase', 'skeleton', 'position', 'spikeTrap', 'door'];
   }
 
   collidedWith(p3, entity) {
@@ -54,10 +57,17 @@ export default class Hero extends Entity {
       entity.openDoor()
     }
 
-    if (entity.hasTag('location') && entity.id == this.goalEntity.id) {
+    if (entity.hasTag('position') && entity.id == this.goalEntity.id) {
       delete this.currentRoomEntities[entity.id];
       if (entity.properties.exit) {
+        this.world.heroesFinished++;
+
+        if (this.world.heroesFinished >= this.world.configuration.heroRules.totalHeroes) {
+          this.world.win();
+        }
+
         this.kill();
+
       } else {
         this.acquireNextGoal();
       }
@@ -144,13 +154,13 @@ export default class Hero extends Entity {
     const prevVelocity = this.physicsBody.body.velocity.clone();
 
     if (this.goalEntity && this.goalEntity.hasTag('broken')) {
-      this.world.lose();
+      this.world.lose("A Hero Found Something That Was Still Broken.");
     }
 
     if (!this.attacking) {
-      let offset = 20;
+      let offset = 10;
 
-      if (this.goalEntity.hasTag('door') || this.goalEntity.hasTag('location')) {
+      if (this.goalEntity.hasTag('door') || this.goalEntity.hasTag('position')) {
         offset = 2;
       }
 
@@ -170,6 +180,12 @@ export default class Hero extends Entity {
 
       // Normalize and scale the velocity so that this.physicsBody can't move faster along a diagonal
       this.physicsBody.body.velocity.normalize().scale(this.speed);
+    }
+
+    if (this.physicsBody.body.velocity.x < -1) {
+      this.physicsBody.setFlipX(true)
+    } else if(this.physicsBody.body.velocity.x > 1) {
+      this.physicsBody.setFlipX(false)
     }
   }
 }

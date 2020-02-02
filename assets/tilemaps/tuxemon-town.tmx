@@ -737,7 +737,7 @@
    </properties>
    <point/>
   </object>
-  <object id="285" name="Skeleton" type="entity" x="760.207" y="595.823">
+  <object id="285" name="Skeleton" type="entity" x="792.082" y="645.407">
    <properties>
     <property name="room_id" value="middle"/>
     <property name="type" value="skeleton"/>
@@ -795,7 +795,7 @@
    </properties>
    <point/>
   </object>
-  <object id="294" name="Path Position" type="entity" x="657.349" y="677.004">
+  <object id="294" name="Path Position" type="entity" x="655.578" y="648.67">
    <properties>
     <property name="bindRoom" type="bool" value="true"/>
     <property name="room_id" value="middle"/>

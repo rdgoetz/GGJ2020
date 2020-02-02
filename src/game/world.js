@@ -17,13 +17,14 @@ export default class World {
     this.p3 = p3;
 
     this.heroTime = null;
-    this.heroesSpawned = 1;
+    this.heroesFinished = 0;
 
     this.readyCallbacks = [];
 
     this.rooms = {};
 
     this.updating = true;
+    this.playingTrack = null;
   }
 
   onReady(callback) {
@@ -41,13 +42,15 @@ export default class World {
       stroke: '#FFFFFF'
     };
 
+    this.playTrack('Victory Music 4')
+
     var text = this.p3.add
-                  .text(200, 250, 'Level Cleared', style)
-                  .setDepth(50)
-                  .setScrollFactor(0);
+                    .text(200, 250, 'Level Cleared', style)
+                    .setDepth(50)
+                    .setScrollFactor(0);
   }
 
-  lose() {
+  lose(reason) {
     this.updating = false;
 
     let style = {
@@ -58,22 +61,32 @@ export default class World {
       stroke: '#000000'
     };
 
-    var text = this.p3.add
-                  .text(250, 250, 'Game Over', style)
-                  .setDepth(50)
-                  .setScrollFactor(0);
+    let reasonStyle = {
+      fontFamily: 'Courier',
+      fontSize: '18px',
+      fill: '#CC0022',
+      strokeThickness: 2,
+      stroke: '#000000'
+    };
+
+    this.playTrack('Defeat Music')
+
+    this.p3.add
+        .text(250, 250, 'Game Over', style)
+        .setDepth(50)
+        .setScrollFactor(0);
+
+    this.p3.add
+        .text(170, 350, reason, reasonStyle)
+        .setDepth(50)
+        .setScrollFactor(0);
   }
 
   newHero() {
     this.heroTime -= this.configuration.heroRules.heroTimerDecrease;
-    this.heroesSpawned++;
 
-    if (this.heroesSpawned > this.configuration.heroRules.totalHeroes) {
-      this.win();
-    } else {
-      let hero = this.createEntity('hero', {type: 'hero'});
-      this.addEntity(this.p3, hero, this.configuration.hero_spawn.x, this.configuration.hero_spawn.y)
-    }
+    let hero = this.createEntity('hero', {type: 'hero'});
+    this.addEntity(this.p3, hero, this.configuration.hero_spawn.x, this.configuration.hero_spawn.y)
   }
 
   loadAssets(p3) {
@@ -105,7 +118,9 @@ export default class World {
     });
 
     let music = [
-      //'Music TR 3'
+      'Music TR 3',
+      'Defeat Music',
+      'Victory Music 4'
     ]
 
     music.forEach((track) => {
@@ -316,8 +331,6 @@ export default class World {
       Object.values(this.entities).filter((entity) => entity.markedForDeath).forEach((entity) => {
         this.removeEntity(entity);
       })
-    } else {
-      debugger;
     }
   }
 
@@ -336,7 +349,11 @@ export default class World {
     let audio = this.music[track]
 
     if (audio) {
-      // audio.play();
+      if (this.playingTrack) {
+        this.playingTrack.stop();
+      }
+      this.playingTrack = audio;
+      audio.play();
     }
   }
 }

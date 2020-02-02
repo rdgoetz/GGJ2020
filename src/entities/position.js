@@ -2,7 +2,7 @@ import Entity from './entity.js'
 
 export default class Position extends Entity {
   init() {
-    this.tags(['location', 'position']);
+    this.tags(['position']);
 
     this.physicsBody.visible = false;
 
@@ -13,12 +13,12 @@ export default class Position extends Entity {
   sprite() {
     return {
       size: {
-        w: 16,
-        h: 16
+        w: 8,
+        h: 8
       },
       offeset: {
-        x: 8,
-        y: 8
+        x: 12,
+        y: 12
       },
       sheet: 'atlas',
       frame: 'item-3.png'

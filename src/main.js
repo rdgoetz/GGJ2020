@@ -85,6 +85,9 @@ function preload() {
 var timer;
 var clock;
 
+var gameStarted = false;
+let welcomeText;
+
 function create() {
   world.create(this)
 
@@ -106,6 +109,24 @@ function create() {
       faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
     });
   });
+
+  this.input.keyboard.once("keydown_SPACE", event => {
+    gameStarted = true;
+    welcomeText.destroy();
+  })
+
+  let style = {
+    fontFamily: 'Courier',
+    fontSize: '48px',
+    fill: '#000000',
+    strokeThickness: 2,
+    stroke: '#FFFFFF'
+  };
+
+  welcomeText = this.add
+              .text(115, 250, 'Press Space To Begin', style)
+              .setDepth(50)
+              .setScrollFactor(0);
 
   world.onReady((readyWorld) => {
     // UI ----------------------------------------------
@@ -131,7 +152,10 @@ function create() {
 }
 
 function update(time, delta) {
-  world.update(this, time, delta);
+  if (gameStarted) {
+    world.update(this, time, delta);
+  }
+
   if (UI.world) {
     UI.update(hearts, clock, bones);
   }

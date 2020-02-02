@@ -45,6 +45,16 @@ export default class Skeleton extends Entity {
 
   collidedWith(p3, entity) {
     if (entity.hasTag('player')) {
+
+      if (!this.flee) {
+        entity.damage(1);
+
+        this.flee = true;
+
+        setTimeout(() => {
+          this.flee = false;
+        }, 500)
+      }
     }
 
     if (entity.hasTag('door')) {
@@ -111,6 +121,12 @@ export default class Skeleton extends Entity {
 
       // Normalize and scale the velocity so that this.physicsBody can't move faster along a diagonal
       this.physicsBody.body.velocity.normalize().scale(this.speed);
+
+      if (this.physicsBody.body.velocity.x < -1) {
+        this.physicsBody.setFlipX(this.flee)
+      } else if(this.physicsBody.body.velocity.x > 1) {
+        this.physicsBody.setFlipX(!this.flee)
+      }
     }
   }
 

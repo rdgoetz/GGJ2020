@@ -14,7 +14,6 @@ export default class UIManager{
     }
   }
 
-
   setWorld(world) {
     this.world = world
   }

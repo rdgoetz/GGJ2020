@@ -1,12 +1,34 @@
-class Entity {
-  constructor(world) {
+import Inventory from '../game/inventory.js'
+
+export default class Entity {
+  constructor(world, properties) {
     this.world = world
     this.physicsBody = null
 
-    this.init();
+    this.tags = [];
+    this.properties = properties;
+    this.inventory = new Inventory();
+  }
+
+  setProperty() {
   }
 
   sprite() {
+  }
+
+  hasTag(tag) {
+    return this.tags.includes(tag);
+  }
+
+  collisionList() {
+    return [];
+  }
+
+  collidedWith(entity) {
+  }
+
+  collidesWith(collisionType) {
+    return this.collisionList().includes(collisionType);
   }
 
   setPhysicsBody(physicsBody) {
@@ -26,5 +48,3 @@ class Entity {
   unload() {
   }
 }
-
-window.entity = Entity

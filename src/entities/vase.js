@@ -16,7 +16,7 @@ export default class Vase extends Entity {
       },
       offeset: {
         x: 7,
-        y: 7
+        y: 6
       },
       sheet: 'atlas',
       frame: 'item-0.png'
@@ -24,7 +24,7 @@ export default class Vase extends Entity {
   }
 
   collisionList() {
-    return ['player', 'hero'];
+    return ['player','hero','skeleton'];
   }
 
   static animations() {

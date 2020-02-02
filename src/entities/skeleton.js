@@ -4,7 +4,20 @@ export default class Skeleton extends Entity {
   init() {
     this.speed = 100;
 
-    this.tags(['skeleton']);
+    this.spawnDelay = 3000;
+    this.spawnTime = 0;
+    this.ready = false;
+
+    this.hitPoints = 3;
+
+    this.physicsBody.body.setImmovable(true);
+
+    this.tags(['skeleton', 'enemy']);
+
+    this.acquireRange = 150;
+    this.leashRange = 300;
+
+    this.physicsBody.setDepth(7);
   }
 
   sprite() {
@@ -27,40 +40,78 @@ export default class Skeleton extends Entity {
   }
 
   collisionList() {
-    return ['player', 'hero'];
+    return ['player', 'hero', 'vase'];
   }
 
   collidedWith(p3, entity) {
     if (entity.hasTag('player')) {
     }
+
+    if (entity.hasTag('door')) {
+      this.flee = true;
+
+      setTimeout(() => {
+        this.flee = false;
+      }, 500)
+    }
+  }
+
+  tookDamage() {
+    let bone = this.world.createEntity('bone', {});
+    this.world.addEntity(this.world.p3, bone, this.physicsBody.x, this.physicsBody.y)
+
+    this.damaged = true;
+    this.flee = true;
+
+    setTimeout(() => {
+      this.flee = false;
+      this.damaged = false;
+    }, 500)
   }
 
   load() {
   }
 
   update(p3, time, delta) {
-    let playerBody = this.world.player.physicsBody;
-    const prevVelocity = this.physicsBody.body.velocity.clone();
-
-    // Stop any previous movement from the last frame
-    this.physicsBody.body.setVelocity(0);
-
-    // Horizontal movement
-    if (playerBody.x < this.physicsBody.x - 20) {
-      this.physicsBody.body.setVelocityX(-this.speed);
-    } else if (playerBody.x > this.physicsBody.x + 20) {
-      this.physicsBody.body.setVelocityX(this.speed);
+    if (this.spawnTime == 0) {
+      this.spawnTime = time + this.spawnDelay;
     }
 
-    // Vertical movement
-    if (playerBody.y < this.physicsBody.y - 20) {
-      this.physicsBody.body.setVelocityY(-this.speed);
-    } else if (playerBody.y > this.physicsBody.y + 20) {
-      this.physicsBody.body.setVelocityY(this.speed);
+    if (this.spawnTime < time && !this.ready) {
+      this.ready = true;
     }
 
-    // Normalize and scale the velocity so that this.physicsBody can't move faster along a diagonal
-    this.physicsBody.body.velocity.normalize().scale(this.speed);
+    if (this.target == null) {
+      this.target = this.acquireTarget(['hero', 'player'], this.acquireRange)
+    } else if(Phaser.Math.Distance.Between(this.target.physicsBody.x, this.target.physicsBody.x, this.physicsBody.x, this.physicsBody.y) > this.leashRange){
+      this.target = null
+    }
+
+    if (this.ready && this.target) {
+      let playerBody = this.target.physicsBody;
+      const prevVelocity = this.physicsBody.body.velocity.clone();
+
+      const direction = this.flee ? -1 : 1;
+
+      // Horizontal movement
+      if (playerBody.x < this.physicsBody.x - 20) {
+        this.physicsBody.body.setVelocityX(-this.speed * direction);
+      } else if (playerBody.x > this.physicsBody.x + 20) {
+        this.physicsBody.body.setVelocityX(this.speed * direction);
+      }
+
+      // Vertical movement
+      if (playerBody.y < this.physicsBody.y - 20) {
+        this.physicsBody.body.setVelocityY(-this.speed * direction);
+      } else if (playerBody.y > this.physicsBody.y + 20) {
+        this.physicsBody.body.setVelocityY(this.speed * direction);
+      }
+
+      // Normalize and scale the velocity so that this.physicsBody can't move faster along a diagonal
+      this.physicsBody.body.velocity.normalize().scale(this.speed);
+    } else {
+      this.physicsBody.body.setVelocity(0);
+    }
   }
 
   die(p3) {
@@ -68,11 +119,6 @@ export default class Skeleton extends Entity {
     this.world.addEntity(p3, skeletonSpawn, this.physicsBody.x, this.physicsBody.y)
 
     for(var i = 0; i<3; i++) {
-      let bone = this.world.createEntity('bone', {});
-      this.world.addEntity(p3, bone, this.physicsBody.x, this.physicsBody.y)
     }
-  }
-
-  unload() {
   }
 }

@@ -18,6 +18,8 @@ import Vase from './entities/vase.js'
 import BrokenVase from './entities/brokenVase.js'
 import Door from './entities/door.js'
 import Position from './entities/position.js'
+import SpikeTrap from './entities/spikeTrap.js'
+import TriggeredSpikeTrap from './entities/triggeredSpikeTrap.js'
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -47,22 +49,26 @@ const game = new Phaser.Game(config);
 let cursors;
 let player;
 
-let world = new World({
-  player: Player,
-  skeleton: Skeleton,
-  skeletonSpawn: SkeletonSpawn,
-  bone: Bone,
-  hero: Hero,
-  vase: Vase,
-  brokenVase: BrokenVase,
-  door: Door,
-  position: Position
-});
+let world;
 
 var UI = new UIManager(this);
 let showDebug = false;
 
 function preload() {
+  world = new World(this, {
+    player: Player,
+    skeleton: Skeleton,
+    skeletonSpawn: SkeletonSpawn,
+    bone: Bone,
+    hero: Hero,
+    vase: Vase,
+    brokenVase: BrokenVase,
+    door: Door,
+    position: Position,
+    spikeTrap: SpikeTrap,
+    triggeredSpikeTrap: TriggeredSpikeTrap
+  });
+
   world.loadAssets(this);
 
   this.load.scenePlugin({
